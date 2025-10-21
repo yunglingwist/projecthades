@@ -1,2 +1,2 @@
 # projecthades
-This is our project for the Information Modelling and Web Technologies course at DHDK program at @unibo.
+This is our Multimedia Museum Meta Mirror (MMMM) project for the Information Modelling and Web Technologies course at DHDK Master's program at the University of Bologna.
