@@ -1,0 +1,32 @@
+{
+  "id": "unique-item-id",
+  "title": "Full Object Name",
+  "type": "object-type",
+  "material": "material",
+  "date": "time period or range",
+  "culture": "civilization or region",
+  "museum": "museum or collection name",
+  "accessionNumber": "object/catalog number",
+  "provenance": "findspot or discovery site (if known)",
+  "dimensions": {
+    "height": "cm",
+    "width": "cm",
+    "depth": "cm"
+  },
+  "source": {
+    "url": "official museum page or academic link",
+    "credit": "All rights remain with the original owners"
+  },
+  "media": [
+    {
+      "src": "/images/item-folder/image01.webp",
+      "caption": "Short caption for the image"
+    }
+  ],
+  "tags": ["keyword1", "keyword2", "keyword3"],
+  "relations": {
+    "game": ["Name of in-game counterpart or concept"],
+    "themes": ["Cultural or thematic grouping, e.g. Rituals, Warfare"]
+  },
+  "gameRelation": "In Hades, this object corresponds to ... (one-sentence summary)."
+}
