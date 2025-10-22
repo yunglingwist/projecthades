@@ -1,0 +1,32 @@
+{
+  "id": "alexander-sarcophagus",
+  "title": "Alexander Sarcophagus",
+  "type": "sarcophagus / funerary monument",
+  "material": "marble (relief sculpture)",
+  "date": "c. 320 BCE",
+  "culture": "Hellenistic",
+  "museum": "Archaeological Museum of Istanbul / Istanbul Archaeology Museums",
+  "accessionNumber": "unknown",
+  "provenance": "Sidon (modern Lebanon)",
+  "dimensions": {
+    "height": "1.95 m",
+    "width": "3.18 m",
+    "depth": "1.67 m"
+  },
+  "source": {
+    "url": "https://www.kulturportali.gov.tr/medya/fotograf/fotodokuman/9479/iskender",
+    "credit": "All rights remain with the original owners"
+  },
+  "media": [
+    {
+      "src": "/images/alexander-sarcophagus/image01.webp",
+      "caption": "Alexander Sarcophagus, relief scenes in museum"
+    }
+  ],
+  "tags": ["Alexander the Great", "sarcophagus", "Hellenistic art", "funerary relief"],
+  "relations": {
+    "game": ["Alexander Sarcophagus"],
+    "themes": ["Heroic legacy", "Afterlife", "Royal funerary art"]
+  },
+  "gameRelation": "In Hades, this object corresponds to the resting monument of a king whose deeds echo across realms."
+}

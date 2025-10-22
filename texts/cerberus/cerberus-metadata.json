@@ -1,0 +1,32 @@
+{
+  "id": "cerberus-ligurian-museum",
+  "title": "Statue of Cerberus (three-headed dog guardian)",
+  "type": "statue / funerary sculpture",
+  "material": "stone / marble",
+  "date": "3rd-6th century AD (probable late Roman period)",
+  "culture": "Roman / syncretic funerary",
+  "museum": "Musei di Genova (Genoa, Italy)",
+  "accessionNumber": null,
+  "provenance": "Found in local necropolis (Ligurian region)",
+  "dimensions": {
+    "height": "98 cm",
+    "width": "40 cm",
+    "depth": "59 cm"
+  },
+  "source": {
+    "url": "https://www.museidigenova.it/en/cerberus",
+    "credit": "All rights remain with the original owners"
+  },
+  "media": [
+    {
+      "src": "/images/cerberus-ligurian/image01.webp",
+      "caption": "Statue of Cerberus, Musei di Genova"
+    }
+  ],
+  "tags": ["Cerberus", "underworld", "funerary", "dog guardian"],
+  "relations": {
+    "game": ["Cerberus Guardian"],
+    "themes": ["Underworld guardians", "Death", "Mythical beasts"]
+  },
+  "gameRelation": "In Hades, this object corresponds to the three-headed guardian dog that blocks passage between realms."
+}

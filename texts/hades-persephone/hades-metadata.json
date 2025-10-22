@@ -1,0 +1,32 @@
+{
+  "id": "bernini-rape-of-proserpine",
+  "title": "Rape of Proserpine",
+  "type": "sculpture",
+  "material": "marble",
+  "date": "1621-1622",
+  "culture": "Italian, Baroque",
+  "museum": "Galleria Borghese, Rome",
+  "accessionNumber": "CCLXVIII",
+  "provenance": "Commissioned by Cardinal Scipione Borghese; part of Ludovisi collection, 1622; purchased by Italian state, 1908",
+  "dimensions": {
+    "height": "255 cm",
+    "width": "unknown",
+    "depth": "unknown"
+  },
+  "source": {
+    "url": "https://www.collezionegalleriaborghese.it/en/opere/rape-of-proserpine",
+    "credit": "All rights remain with the original owners"
+  },
+  "media": [
+    {
+      "src": "/images/item-folder/image01.webp",
+      "caption": "Bernini's Rape of Proserpine, marble sculpture, 1621-1622"
+    }
+  ],
+  "tags": ["Bernini", "Baroque", "marble", "Proserpine", "Pluto", "mythology", "abduction"],
+  "relations": {
+    "game": ["Rape of Persephone (Hades)"],
+    "themes": ["Mythology", "Abduction", "Baroque Sculpture"]
+  },
+  "gameRelation": "In Hades, this sculpture corresponds to the mythological story of Persephone's abduction by Hades, inspiring the visual representation of the character's struggle."
+}

@@ -1,0 +1,33 @@
+{
+"id": "theseus-minotaur-canova-vanda",
+"title": "Theseus and the Minotaur",
+"type": "sculpture / group",
+"material": "marble",
+"date": "1781-1783",
+"culture": "Neoclassical (Italian, Antonio Canova)",
+"museum": "Victoria and Albert Museum, London",
+"accessionNumber": "O96376",
+"provenance": "Commissioned by Girolamo Zulian; later in private collections (von Fries, Marquess of Londonderry); acquired by V&A in 1962",
+"provenance_note": "Created in Rome for Zulian; sold and passed through European collections before acquisition by V&A.",
+"dimensions": {
+"height": "145.4 cm",
+"width": "158.7 cm",
+"depth": "91.4 cm"
+},
+"source": {
+"url": "https://collections.vam.ac.uk/item/O96376/theseus-and-the-minotaur-statue-canova-antonio/",
+"credit": "All rights remain with the original owners"
+},
+"media": [
+{
+"src": "/images/theseus-minotaur-canova/image01.webp",
+"caption": "Theseus and the Minotaur, Antonio Canova — Victoria & Albert Museum"
+}
+],
+"tags": ["Canova", "Theseus", "Minotaur", "Neoclassical", "marble sculpture", "heroic nudity"],
+"relations": {
+"game": ["Theseus & Minotaur (Canova)"],
+"themes": ["Heroism", "Reason vs. brutality", "Neoclassical revival"]
+},
+"gameRelation": "In Hades, this object corresponds to a triumph of human reason over monstrous force—a sculpted lesson in courage and restraint."
+}

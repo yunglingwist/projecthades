@@ -1,0 +1,32 @@
+{
+"id": "zeugma-mars",
+"title": "Bronze Statue of Mars (Ares) from Zeugma",
+"type": "statue / sculpture",
+"material": "bronze (hollow-cast, shell 2-4 mm)",
+"date": "Roman period (found 1999-2000); stylistically Roman Imperial",
+"culture": "Roman (found at a Greco-Roman site, Zeugma)",
+"museum": "Zeugma Mosaic Museum (Gaziantep Archaeology Museum)",
+"accessionNumber": "unknown",
+"provenance": "Found in the Poseidon villa, ancient Zeugma (near Belkis, Nizip district, Gaziantep) during rescue excavations (1999-2000)",
+"dimensions": {
+"height": "150 cm",
+"width": "unknown",
+"depth": "unknown"
+},
+"source": {
+"url": "https://www.academia.edu/19800165/The_Bronze_Mars_of_Zeugma_marginal_notes_on_its_discovery_and_conservation_treatment",
+"credit": "All rights remain with the original owners"
+},
+"media": [
+{
+"src": "/images/zeugma-mars/image01.webp",
+"caption": "Bronze Mars (Ares) from Zeugma (post-conservation photo)"
+}
+],
+"tags": ["Mars", "Ares", "Zeugma", "bronze sculpture", "Roman period", "rescue excavation"],
+"relations": {
+"game": ["Zeugma Mars"],
+"themes": ["War", "Fertility", "Roman art", "Conservation"]
+},
+"gameRelation": "In Hades, this object corresponds to a nearly life-size bronze war-god figure—both threatening and strangely fertile, a relic of battle and ritual."
+}

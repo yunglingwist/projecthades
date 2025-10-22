@@ -1,0 +1,32 @@
+{
+  "id": "charons-obol-coin",
+  "title": "Charon's Obol (Danake)",
+  "type": "coin / ritual token",
+  "material": "Bronze / possibly copper alloy",
+  "date": "5th-1st century BC",
+  "culture": "Greek / Hellenistic",
+  "museum": "sold in private market",
+  "accessionNumber": "unknown",
+  "provenance": "original provenance unknown",
+  "dimensions": {
+    "height": "12 mm",
+    "width": "unknown",
+    "depth": "unknown"
+  },
+  "source": {
+    "url": "https://www.cngcoins.com/Coin.aspx?CoinID=103284",
+    "credit": "All rights remain with the original owners"
+  },
+  "media": [
+    {
+      "src": "/images/charons-obol/image01.webp",
+      "caption": "Charon's Obol coin (Greek burial token)"
+    }
+  ],
+  "tags": ["Funerary", "Obol", "Charon", "Burial rite"],
+  "relations": {
+    "game": ["Charon's Obol"],
+    "themes": ["Death", "Underworld", "Ritual"]
+  },
+  "gameRelation": "In Hades, this object corresponds to the coin used to pay Charon's fare across the Styx."
+}

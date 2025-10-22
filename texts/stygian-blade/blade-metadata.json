@@ -1,0 +1,32 @@
+{
+  "id": "iron-sword-british-museum-1892-0901-452",
+  "title": "Iron Sword",
+  "type": "weapon / sword",
+  "material": "Iron with copper alloy components",
+  "date": "1st century AD",
+  "culture": "Romano-British / La Tène influences",
+  "museum": "British Museum",
+  "accessionNumber": "1892,0901.452",
+  "provenance": "Found at Hod Hill, Britain",
+  "dimensions": {
+    "height": "557mm total, 435mm blade",
+    "width": "52mm blade, 66mm hilt end",
+    "depth": "unknown"
+  },
+  "source": {
+    "url": "https://www.britishmuseum.org/collection/object/H_1892-0901-452",
+    "credit": "All rights remain with the original owners"
+  },
+  "media": [
+    {
+      "src": "/images/iron-sword/image01.webp",
+      "caption": "Iron Sword, British Museum"
+    }
+  ],
+  "tags": ["weapon", "sword", "Roman Britain", "iron technology"],
+  "relations": {
+    "game": ["Iron Sword"],
+    "themes": ["Combat", "Technology", "Defense"]
+  },
+  "gameRelation": "In Hades, this object corresponds to a basic iron blade—humble but essential for mortal conflict."
+}

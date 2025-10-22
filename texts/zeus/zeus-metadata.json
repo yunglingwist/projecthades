@@ -1,0 +1,32 @@
+{
+"id": "louvre-jupiter-mr255",
+"title": "Jupiter (statue)",
+"type": "statue / sculpture",
+"material": "white marble (coarse-grained)",
+"date": "Roman Imperial, 2nd century AD (approx. 100-200 CE)",
+"culture": "Roman (after a Hellenistic original); place of creation: Smyrna (Izmir)",
+"museum": "Musée du Louvre, Département des Antiquités grecques, étrusques et romaines",
+"accessionNumber": "MR 255 ; N 213 ; Ma 13",
+"provenance": "Acquired for the royal collection (Versailles) in the 17th century; entered the Louvre after the Revolution (inventory arrival c.1798)",
+"dimensions": {
+"height": "270 cm",
+"width": "105 cm",
+"depth": "80 cm"
+},
+"source": {
+"url": "https://collections.louvre.fr/en/ark:/53355/cl010275445",
+"credit": "All rights remain with the original owners"
+},
+"media": [
+{
+"src": "/images/louvre-jupiter/image01.webp",
+"caption": "Jupiter statue (Louvre) — fragmentary marble statue originally from Smyrna"
+}
+],
+"tags": ["Jupiter", "Zeus", "marble", "Roman copy", "Smyrna", "classical sculpture"],
+"relations": {
+"game": ["Louvre Jupiter"],
+"themes": ["Divinity", "Imperial taste", "Hellenistic originals"]
+},
+"gameRelation": "In Hades, this statue corresponds to the imposing likeness of a sky-king—an imperial echo of Zeus/Jupiter that watches the mortal world from a marble silence."
+}

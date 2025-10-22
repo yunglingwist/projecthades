@@ -1,0 +1,32 @@
+{
+  "id": "varvakeion-athena",
+  "title": "Varvakeion Athena",
+  "type": "statue / replica",
+  "material": "Pentelic marble",
+  "date": "c. AD 200-250",
+  "culture": "Roman (Greek subject)",
+  "museum": "National Archaeological Museum, Athens",
+  "accessionNumber": "No. 129", 
+  "provenance": "Discovered in 1880 in ruins near the Varvakeion School, Athens", 
+  "dimensions": {
+    "height": "105 cm",
+    "width": "unknown",
+    "depth": "unknown"
+  },
+  "source": {
+    "url": "https://www.namuseum.gr/en/collection/klasiki-periodos-2/", 
+    "credit": "All rights remain with the original owners"
+  },
+  "media": [
+    {
+      "src": "/images/varvakeion-athena/image01.webp",
+      "caption": "Varvakeion Athena statue, National Archaeological Museum"
+    }
+  ],
+  "tags": ["Athena", "replica", "Parthenon", "Roman copy"],
+  "relations": {
+    "game": ["Athena Parthenos replica"],
+    "themes": ["Wisdom", "Protection", "Divine Statues"]
+  },
+  "gameRelation": "In Hades, this object corresponds to an icon of Athena as guardian of cities and wisdom."
+}

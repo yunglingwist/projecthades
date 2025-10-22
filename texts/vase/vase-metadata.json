@@ -1,0 +1,32 @@
+{
+  "id": "terracotta-hydria-persephone",
+  "title": "Terracotta Hydria (Abduction of Persephone)",
+  "type": "vessel / hydria",
+  "material": "terracotta, red-figure",
+  "date": "ca. 340-330 BCE",
+  "culture": "Greek, South Italian (Apulian)",
+  "museum": "The Metropolitan Museum of Art",
+  "accessionNumber": "56.171.65",
+  "provenance": "Gift of Miss Matilda W. Bruce, 1907",
+  "dimensions": {
+    "height": "75.6 cm",
+    "width": "57.2 cm",
+    "depth": "45.1 cm"
+  },
+  "source": {
+    "url": "https://www.metmuseum.org/art/collection/search/247597",
+    "credit": "All rights remain with the original owners"
+  },
+  "media": [
+    {
+      "src": "/images/terracotta-hydria-persephone/image01.webp",
+      "caption": "Hydria depicting the abduction of Persephone"
+    }
+  ],
+  "tags": ["hydria", "Persephone", "mythology", "Greek pottery", "underworld"],
+  "relations": {
+    "game": ["Hydria of Abduction"],
+    "themes": ["Underworld myth", "Fertility", "Seasonal cycles"]
+  },
+  "gameRelation": "In Hades, this object corresponds to the vessel that captures the moment of Persephone's descent to the underworld."
+}

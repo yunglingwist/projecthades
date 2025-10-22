@@ -1,0 +1,32 @@
+{
+  "id": "bronze-chariot-inlaid-with-ivory",
+  "title": "Bronze Chariot Inlaid with Ivory (Monteleone Chariot)",
+  "type": "chariot / funerary vehicle",
+  "material": "bronze, ivory, wood (reconstructed parts)",
+  "date": "2nd quarter of 6th century BCE",
+  "culture": "Etruscan",
+  "museum": "The Metropolitan Museum of Art",
+  "accessionNumber": "03.23.1",
+  "provenance": "Discovered 1902 in a tomb near Monteleone di Spoleto, Umbria, Italy", 
+  "dimensions": {
+    "height": "130.9 cm",
+    "width": "209 cm",
+    "depth": "unknown"
+  },
+  "source": {
+    "url": "https://www.metmuseum.org/art/collection/search/247020",
+    "credit": "All rights remain with the original owners"
+  },
+  "media": [
+    {
+      "src": "/images/bronze-chariot-inlaid-with-ivory/image01.webp",
+      "caption": "Etruscan chariot with bronze and ivory inlays (Monteleone Chariot)"
+    }
+  ],
+  "tags": ["Etruscan", "chariot", "funerary", "ivory inlay", "bronze"],
+  "relations": {
+    "game": ["Parade Chariot"],
+    "themes": ["Funerary rites", "Heroic iconography", "Burial goods"]
+  },
+  "gameRelation": "In Hades, this object corresponds to a ceremonial chariot representing a hero's journey beyond death."
+}

@@ -1,0 +1,32 @@
+{
+  "id": "arrowhead-british-museum-1883-0725-11",
+  "title": "Arrowhead",
+  "type": "weapon / projectile point",
+  "material": "stone (likely flint)",
+  "date": "525BC-330BC",
+  "culture": "Classical Greek, Archaic Greek",
+  "museum": "British Museum",
+  "accessionNumber": "1883,0725.11",
+  "provenance": "Discovered in Hierapolis (Denizli, Turkey). Purchased from Rev. Greville John Chester in 1883.",
+  "dimensions": {
+    "height": "5.08 cm",
+    "width": "unknown",
+    "depth": "unknown"
+  },
+  "source": {
+    "url": "https://www.britishmuseum.org/collection/object/G_1883-0725-11",
+    "credit": "All rights remain with the original owners"
+  },
+  "media": [
+    {
+      "src": "/images/arrowhead/image01.webp",
+      "caption": "Stone arrowhead, British Museum"
+    }
+  ],
+  "tags": ["arrowhead", "projectile", "stone tool", "weapon"],
+  "relations": {
+    "game": ["Stone Arrowhead"],
+    "themes": ["Hunting", "Prehistory", "Tools"]
+  },
+  "gameRelation": "In Hades, this object corresponds to a simple arrowhead—primitive yet sharp."
+}

@@ -1,0 +1,32 @@
+{
+  "id": "shield-of-king-pharnakes",
+  "title": "Shield of King Pharnakes",
+  "type": "shield / armor",
+  "material": "Bronze",
+  "date": "c. 185-160 BC",
+  "culture": "Pontic / Hellenistic Anatolian",
+  "museum": "The J. Paul Getty Museum",
+  "accessionNumber": "80.AC.60",
+  "provenance": "Kingdom of Pontus, Asia Minor",
+  "dimensions": {
+    "height": "79.7 cm",
+    "width": "81.4 cm",
+    "depth": "11.8 cm"
+  },
+  "source": {
+    "url": "https://www.getty.edu/art/collection/object/103TTD",
+    "credit": "All rights remain with the original owners"
+  },
+  "media": [
+    {
+      "src": "/images/shield-pharnakes/image01.webp",
+      "caption": "Bronze shield of King Pharnakes, Getty Museum"
+    }
+  ],
+  "tags": ["shield", "royal armor", "Hellenistic", "Pontus"],
+  "relations": {
+    "game": ["Pharnakes' Shield"],
+    "themes": ["Kingship", "Protection", "Royal Regalia"]
+  },
+  "gameRelation": "In Hades, this object corresponds to a royal defensive relic used by a Pontic king against divine forces."
+}

@@ -1,0 +1,32 @@
+{
+  "id": "glass-jug-metmuseum-248996",
+  "title": "Glass Jug",
+  "type": "vessel / jug",
+  "material": "glass",
+  "date": "late 1st-early 2nd century AD",
+  "culture": "Roman",
+  "museum": "The Metropolitan Museum of Art",
+  "accessionNumber": "48.17.15",
+  "provenance": "Egypt (possibly from Fayum or Middle Egypt)",
+  "dimensions": {
+    "height": "11.4 cm",
+    "width": "4.4 cm",
+    "depth": "4.4 cm"
+  },
+  "source": {
+    "url": "https://www.metmuseum.org/art/collection/search/248996",
+    "credit": "All rights remain with the original owners"
+  },
+  "media": [
+    {
+      "src": "/images/glass-jug/image01.webp",
+      "caption": "Roman glass jug, Met Museum"
+    }
+  ],
+  "tags": ["glass", "jug", "Roman", "vessel"],
+  "relations": {
+    "game": ["Glass Jug"],
+    "themes": ["Drinkware", "Everyday objects", "Roman glass"]
+  },
+  "gameRelation": "In Hades, this object corresponds to a Roman glass vessel—fragile but filled with memory's fluid."
+}

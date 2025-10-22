@@ -1,0 +1,32 @@
+{
+  "id": "charon-last-judgment",
+  "title": "Charon, The Last Judgment (fresco detail)",
+  "type": "fresco (figure within larger composition)",
+  "material": "Fresco / plaster with pigment",
+  "date": "1536-1541",
+  "culture": "Italian Renaissance",
+  "museum": "Vatican Museums, Sistine Chapel",
+  "accessionNumber": null,
+  "provenance": "Painted on the altar wall of the Sistine Chapel, Vatican City",
+  "dimensions": {
+    "height": "1370 cm",
+    "width": "1220 cm",
+    "depth": "unknown"
+  },
+  "source": {
+    "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/cappella-sistina/giudizio-universale.html",
+    "credit": "All rights remain with the original owners"
+  },
+  "media": [
+    {
+      "src": "/images/charon-lastjudgment/detail-charon.webp",
+      "caption": "Charon depicted in Michelangelo's Last Judgment"
+    }
+  ],
+  "tags": ["Charon", "Judgment", "Renaissance", "Fresco"],
+  "relations": {
+    "game": ["Charon, Ferryman"],
+    "themes": ["Death", "Underworld", "Judgment"]
+  },
+  "gameRelation": "In Hades, this figure corresponds to Charon, the ferryman of souls across the Styx."
+}
