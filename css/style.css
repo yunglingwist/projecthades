@@ -1,0 +1,100 @@
+:root{
+  --bg:#0f2035;         /* deep navy */
+  --fg:#e7d6a3;         /* warm gold for text */
+  --gold:#e1b258;       /* accent gold (cards, footer) */
+  --gold-dark:#c69a4b;  /* borders/shadows */
+  --muted:#b7a987;
+  --max:1100px;
+  --radius:10px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font:16px/1.5 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+
+/* simple container */
+.container{width:100%; max-width:var(--max); margin:0 auto; padding:0 20px}
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:10;
+  background:var(--bg);
+  border-bottom:1px solid rgba(225,178,88,.25);
+}
+.header-inner{display:flex; align-items:center; gap:28px; padding:14px 0}
+.brand{
+  font-weight:800; letter-spacing:.6px; text-decoration:none;
+  color:var(--gold); font-size:28px; line-height:1;
+}
+.main-nav{display:flex; gap:18px; margin-left:auto}
+.main-nav a{
+  color:var(--fg); text-decoration:none; opacity:.9;
+}
+.main-nav a:hover,.main-nav a.active{color:var(--gold)}
+
+/* Hero */
+.hero{display:grid; grid-template-columns:1.1fr .9fr; gap:24px; padding:36px 0 20px}
+.hero-copy h1{margin:.2rem 0 1rem; font-size:28px; color:var(--fg)}
+.hero-copy .lead{color:var(--muted); max-width:44ch}
+.hero-art{display:flex; justify-content:center; align-items:flex-start}
+.hero-art img{max-width:320px; height:auto; display:block}
+
+/* Items */
+.items{padding:10px 0 60px}
+.items-header h2{font-size:22px; margin:18px 0}
+.carousel{position:relative; display:flex; align-items:center; gap:10px}
+.track{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns: minmax(240px, 1fr);
+  gap:16px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding:12px 8px;
+}
+.track::-webkit-scrollbar{height:8px}
+.track::-webkit-scrollbar-thumb{background:rgba(225,178,88,.35); border-radius:20px}
+
+.card{
+  height:180px;
+  background:var(--gold);
+  border:3px solid var(--gold-dark);
+  border-radius:var(--radius);
+  box-shadow:0 2px 0 0 rgba(0,0,0,.25) inset;
+  scroll-snap-align:start;
+}
+
+/* chevrons */
+.chev{
+  background:none; color:var(--gold); border:0;
+  font-size:36px; line-height:1;
+  width:40px; height:40px; cursor:pointer;
+}
+.chev:hover{color:#ffd991}
+
+/* Footer bar */
+.site-footer{
+  background:var(--gold);
+  color:#1e1e1e;
+  text-align:center;
+  padding:6px 0;
+  border-top:3px solid var(--gold-dark);
+}
+
+/* responsive tweaks */
+@media (max-width: 880px){
+  .hero{grid-template-columns:1fr; text-align:left}
+  .hero-art{justify-content:flex-start}
+}
+.brand img {
+  max-height: 50px;
+  height: auto;
+  width: auto;
+  vertical-align: middle;
+  display: block;
+}

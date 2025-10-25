@@ -1,26 +1,75 @@
 <!doctype html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Hades Projesi</title>
-  <link rel="stylesheet" href="./css/styles.css" />
+  <title>HADES — Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <h1>Hades: Real Stuff From Game???? </h1>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="images/HadesLogoRed.png" alt="Zagreus" /></a>
+      <nav class="main-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="map.html">Map</a>
+        <a href="exhibition.html">Exhibition</a>
+        <a href="documentation.html">Documentation</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </nav>
+    </div>
   </header>
 
+  <!-- Hero -->
   <main>
-    <section id="gallery">
-      <h2>Müze Eserleri</h2>
-      <!-- images klasöründeki örnek görseli göster -->
-      <img src="./images/PortraitZagreus.webp" alt="Zagreus" width="400" />
+    <section class="hero container">
+      <div class="hero-copy">
+        <h1>hades text</h1>
+        <p class="lead">Placeholder blurb. We’ll plug narrative or intro copy here later.</p>
+      </div>
+      <div class="hero-art">
+        <img src="images/PortraitZagreus.webp" alt="Zagreus" />
+      </div>
+    </section>
+
+    <!-- Items carousel (placeholder cards) -->
+    <section class="items container">
+      <div class="items-header">
+        <h2>Items</h2>
+        <!-- (optional) link to full list -->
+      </div>
+
+      <div class="carousel">
+        <button class="chev left" aria-label="Previous">‹</button>
+
+        <div class="track" id="track">
+          <!-- 3 placeholder cards (duplicate/add more as needed) -->
+          <article class="card"></article>
+          <article class="card"></article>
+          <article class="card"></article>
+          <!-- add more to test scroll -->
+          <article class="card"></article>
+          <article class="card"></article>
+        </div>
+
+        <button class="chev right" aria-label="Next">›</button>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© Team Behind it</p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">Copyright</div>
   </footer>
+
+  <script>
+    // minimal carousel scroll (no libs)
+    const track = document.getElementById('track');
+    const step = () => Math.min(track.clientWidth, 360); // one card-ish
+    document.querySelector('.chev.left').onclick  = () => track.scrollBy({left: -step(), behavior:'smooth'});
+    document.querySelector('.chev.right').onclick = () => track.scrollBy({left:  step(), behavior:'smooth'});
+  </script>
 </body>
 </html>

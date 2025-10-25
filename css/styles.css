@@ -1,6 +1,0 @@
-* { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, -apple-system, Arial, sans-serif; line-height: 1.5; }
-header { padding: 16px; background: #111; color: #fff; }
-main { padding: 16px; }
-h1, h2 { margin: 0 0 12px; }
-img { display: block; max-width: 100%; height: auto; border-radius: 12px; }
