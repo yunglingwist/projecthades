@@ -95,7 +95,6 @@ body{
   max-height: 50px;
   height: auto;
   width: auto;
-  vertical-align: middle;
   display: block;
 }
 .theme-select select{
