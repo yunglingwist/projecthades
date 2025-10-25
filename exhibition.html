@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>HADES — Exhibition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Header (aynı, tema seçici dahil) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/HadesLogoRed.png" alt="Hades logo" />
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="map.html">Map</a>
+        <a href="exhibition.html" class="active">Exhibition</a>
+        <a href="documentation.html">Documentation</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </nav>
+      <div class="theme-select">
+        <label for="theme" class="visually-hidden">Theme</label>
+        <select id="theme">
+          <option value="1990-2025">1990–2025</option>
+          <option value="2035">2035</option>
+          <option value="second-half-20th">Second Half 20th</option>
+          <option value="first-half-20th">First Half 20th</option>
+          <option value="19th-century">19th Century</option>
+          <option value="1500-1800">1500–1800</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="exhibit container">
+    <h1 class="sr-only">Exhibition Map</h1>
+
+    <!-- Harita sahnesi -->
+    <section class="map-stage">
+      <div class="map-wrap">
+        <div class="map-wrap">
+  <img id="map" src="images/GameMap.jpg" alt="Hades exhibition map">
+  <div id="hotspots" aria-label="Exhibition hotspots"></div>
+  <!-- band’lar aynı kalabilir -->
+</div>
+        <div id="hotspots" aria-label="Exhibition hotspots"></div>
+
+        <!-- (opsiyonel) seviye bantları; yüzdeleri gözle ayarlayacaksın -->
+        <div class="band" id="band-house-of-hades" style="top:86%"></div>
+        <div class="band" id="band-tartarus"        style="top:75%"></div>
+        <div class="band" id="band-asphodel"        style="top:60%"></div>
+        <div class="band" id="band-elysium"         style="top:35%"></div>
+        <div class="band" id="band-surface"         style="top:12%"></div>
+      </div>
+
+      <!-- Tooltip -->
+      <div id="tooltip" role="status" class="tooltip" hidden></div>
+
+      <!-- Sol seviye etiketleri -->
+      <aside class="level-labels">
+        <button data-level="house-of-hades">House of Hades</button>
+        <button data-level="tartarus">Tartarus</button>
+        <button data-level="asphodel">Asphodel</button>
+        <button data-level="elysium">Elysium</button>
+        <button data-level="surface">Surface</button>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Tema kalıcılığı -->
+  <script>
+    (function () {
+      const KEY = 'projecthades-theme';
+      const html = document.documentElement;
+      const select = document.getElementById('theme');
+      const saved = localStorage.getItem(KEY) || '1990-2025';
+      html.setAttribute('data-theme', saved);
+      if (select) {
+        select.value = saved;
+        select.addEventListener('change', (e) => {
+          const val = e.target.value;
+          html.setAttribute('data-theme', val);
+          localStorage.setItem(KEY, val);
+        });
+      }
+    })();
+  </script>
+
+  <!-- Hotspotları çiz -->
+  <script>
+    (async function(){
+      // 1) JSON’dan noktaları çek
+      //  x,y yüzdeleri ve ikon yolu: data/map/map-points.json
+      let points = [];
+      try {
+        const res = await fetch('data/map/map-points.json');
+        points = await res.json();
+      } catch (e) {
+        console.warn('map-points.json could not be loaded.', e);
+      }
+
+      const host = document.getElementById('hotspots');
+      const tip  = document.getElementById('tooltip');
+
+      // 2) buton hotspot üret
+      points.forEach(p => {
+        const btn = document.createElement('button');
+        btn.className = 'hotspot';
+        btn.style.left = p.x + '%';
+        btn.style.top  = p.y + '%';
+        btn.setAttribute('aria-label', p.itemId);
+
+        // ikon
+        const img = document.createElement('img');
+        img.src = p.icon;
+        img.alt = '';
+        btn.appendChild(img);
+
+        // hover tooltip
+        btn.addEventListener('mouseenter', () => {
+          tip.textContent = p.itemId;
+          tip.hidden = false;
+        });
+        btn.addEventListener('mousemove', (ev) => {
+          tip.style.left = (ev.clientX + 12) + 'px';
+          tip.style.top  = (ev.clientY + 12) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => {
+          tip.hidden = true;
+        });
+
+        // tıkla → item sayfası
+        btn.addEventListener('click', () => {
+          location.href = `item.html?id=${encodeURIComponent(p.itemId)}`;
+        });
+
+        host.appendChild(btn);
+      });
+
+      // 3) sol etiketler: ilgili banda kaydır
+      document.querySelectorAll('.level-labels button').forEach(b=>{
+        b.addEventListener('click', ()=>{
+          const band = document.getElementById('band-'+b.dataset.level);
+          if (band) band.scrollIntoView({behavior:'smooth', block:'center'});
+        });
+      });
+
+      // 4) aktif seviye göstergesi (Intersection Observer)
+      const labels = document.querySelectorAll('.level-labels button');
+      const setActive = id => labels.forEach(a => a.classList.toggle('active', a.dataset.level === id));
+      const ids = ['house-of-hades','tartarus','asphodel','elysium','surface'];
+
+      const io = new IntersectionObserver(entries=>{
+        entries.forEach(e=>{
+          if (e.isIntersecting) setActive(e.target.id.replace('band-',''));
+        });
+      }, {threshold:0.6});
+
+      ids.forEach(id=>io.observe(document.getElementById('band-'+id)));
+    })();
+  </script>
+</body>
+</html>
