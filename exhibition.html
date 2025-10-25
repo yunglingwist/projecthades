@@ -96,7 +96,7 @@
       //  x,y yüzdeleri ve ikon yolu: data/map/map-points.json
       let points = [];
       try {
-        const res = await fetch('data/map/map-points.json');
+        const res = await fetch('data/exhibition/ExhibitionPoints.json');
         points = await res.json();
       } catch (e) {
         console.warn('map-points.json could not be loaded.', e);

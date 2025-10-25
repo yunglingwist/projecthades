@@ -113,3 +113,5 @@ body{
   height:1px;
   overflow:hidden;
 }
+#map { display:block; width:100%; height:auto; }
+#hotspots { position:absolute; inset:0; pointer-events:none; }
