@@ -2,92 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>HADES — Exhibition (Minimal)</title>
+  <title>HADES — Exhibition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    /* ——— SADE STİLLER ——— */
-    :root{
-      --bg:#0f2035; --fg:#e7d6a3; --gold:#e1b258; --gold-dark:#c69a4b;
-    }
-    html,body{height:100%}
-    body{margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, Arial, sans-serif}
-
-    .wrap{max-width:1100px; margin:0 auto; padding:20px}
-    h1{font-size:18px; margin:12px 0 10px; opacity:.85}
-
-    /* Harita sahnesi */
-    .map-wrap{ position:relative; width:100%; margin:10px auto 30px; }
-    .map-wrap img{ display:block; width:100%; height:auto; border:2px solid rgba(225,178,88,.35); border-radius:8px; }
-
-    /* İşaret katmanı */
-    .markers{ position:absolute; inset:0; pointer-events:none; }
-
-    /* Baklava (45° döndürülmüş kare) marker */
-    .marker{
-      position:absolute;
-      width:20px; height:20px;
-      background:var(--gold);
-      border:2px solid var(--gold-dark);
-      border-radius:2px;
-      transform: translate(-50%,-50%) rotate(45deg);
-      box-shadow:0 6px 16px rgba(0,0,0,.35), inset 0 0 0 1px rgba(0,0,0,.15);
-      pointer-events:auto;           /* tıklanabilir */
-      cursor:pointer;
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-    .marker:hover{
-      transform: translate(-50%,-50%) rotate(45deg) scale(1.12);
-      box-shadow:0 10px 22px rgba(0,0,0,.45), inset 0 0 0 1px rgba(0,0,0,.15);
-    }
-
-    /* İsteğe bağlı küçük etiket (baklavaya sığsın diye döndürmeyip üstüne koyuyoruz) */
-    .label{
-      position:absolute; top:-22px; left:50%; transform:translateX(-50%);
-      background:rgba(0,0,0,.55); color:#fff; font-size:12px; padding:2px 6px; border-radius:6px;
-      border:1px solid rgba(255,255,255,.2); white-space:nowrap; pointer-events:none;
-    }
-
-    /* Toolip (fareyi marker üstünde gezdirince) */
-    .tooltip{
-      position:fixed; z-index:50; background:rgba(0,0,0,.75); color:#fff;
-      padding:6px 10px; font-size:12px; border-radius:8px; border:1px solid rgba(255,255,255,.25);
-      pointer-events:none; display:none;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css" />
+  <link id="theme-css" rel="stylesheet" href="css/themes/theme-1990-2025.css" />
 </head>
 <body>
-  <div class="wrap">
-    <h1>Exhibition</h1>
 
-    <div class="map-wrap">
-      <!-- >>> KENDİ HARİTA DOSYANI BURAYA KOY <<< -->
-      <img id="map" src="images/GameMap.jpg" alt="Exhibition map">
-
-      <!-- Marker katmanı -->
-      <div class="markers" id="markers"></div>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="images/HadesLogoRed.png" alt="Hades Logo" /></a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="exhibition.html" class="active">Exhibition</a>
+        <a href="documentation.html">Documentation</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </nav>
+      <div class="theme-select">
+        <label for="theme" class="visually-hidden">Theme</label>
+        <select id="theme">
+          <option value="1990-2025">1990–2025</option>
+          <option value="2035">2035</option>
+          <option value="second-half-20th">Second Half 20th</option>
+          <option value="first-half-20th">First Half 20th</option>
+          <option value="19th-century">19th Century</option>
+          <option value="1500-1800">1500–1800</option>
+        </select>
+      </div>
     </div>
-  </div>
+  </header>
 
-  <!-- Basit tooltip -->
+  <main class="exhibit container">
+    <h1 class="sr-only">Exhibition Map</h1>
+
+    <section class="map-stage">
+      <div class="map-wrap">
+        <img id="map" src="images/GameMap.jpg" alt="Hades exhibition map" />
+        <div id="markers"></div>
+      </div>
+    </section>
+  </main>
+
   <div class="tooltip" id="tooltip"></div>
 
   <script>
-    /* 
-      TAMAMEN OFFLINE: Veri burada.
-      x, y = yüzde koordinatlar (0–100). 
-      label = küçük yazı (opsiyonel). clickId = tıklayınca gideceğin item id (opsiyonel).
-      Koordinatları Photoshop/Figma'dan px al → %'ye çevir:  x% = X/width*100, y% = Y/height*100
-    */
     const MARKERS = [
-      { x: 50, y: 86, label: 'Obol',   clickId: 'obol-coin' },
-      { x: 62, y: 78, label: 'Blade',  clickId: 'stygian-blade' },
-      { x: 30, y: 18, label: 'Vase',   clickId: 'vase' },
-      // KENDİ NOKTALARINI BURAYA EKLE
-      // { x: 42.5, y: 63.2, label: 'Ares', clickId: 'ares' },
+      { x: 50, y: 86, label: 'Obol', clickId: 'obol-coin' },
+      { x: 62, y: 78, label: 'Blade', clickId: 'stygian-blade' },
+      { x: 30, y: 18, label: 'Vase', clickId: 'vase' }
     ];
 
-    // Markerları çiz
-    (function initMarkers(){
+    (function(){
       const host = document.getElementById('markers');
       const tip  = document.getElementById('tooltip');
 
@@ -96,40 +62,57 @@
         m.className = 'marker';
         m.style.left = p.x + '%';
         m.style.top  = p.y + '%';
+        m.style.position = 'absolute';
+        m.style.width = '20px';
+        m.style.height = '20px';
+        m.style.background = 'var(--gold)';
+        m.style.border = '2px solid var(--gold-dark)';
+        m.style.borderRadius = '2px';
+        m.style.transform = 'translate(-50%,-50%) rotate(45deg)';
+        m.style.boxShadow = '0 6px 16px rgba(0,0,0,.35)';
+        m.style.cursor = 'pointer';
 
-        // İsteğe bağlı küçük etiketi ekle
-        if (p.label){
-          const t = document.createElement('div');
-          t.className = 'label';
-          t.textContent = p.label;
-          m.appendChild(t);
-        }
-
-        // Tooltip
-        m.addEventListener('mouseenter', (e)=>{
+        m.addEventListener('mouseenter', () => {
           tip.style.display = 'block';
-          tip.textContent = p.label || (p.clickId || 'Marker');
+          tip.textContent = p.label;
         });
-        m.addEventListener('mousemove', (e)=>{
-          tip.style.left = (e.clientX + 12) + 'px';
-          tip.style.top  = (e.clientY + 12) + 'px';
+        m.addEventListener('mousemove', (e) => {
+          tip.style.left = (e.clientX + 10) + 'px';
+          tip.style.top  = (e.clientY + 10) + 'px';
         });
-        m.addEventListener('mouseleave', ()=>{
-          tip.style.display = 'none';
-        });
-
-        // Tıklama → item sayfasına git (istersen kapat)
-        m.addEventListener('click', ()=>{
-          if (p.clickId){
-            // Projendeki item sayfası yolu buysa:
-            location.href = `item.html?id=${encodeURIComponent(p.clickId)}`;
-            // Sadece test etmek istersen:
-            // alert('Clicked: ' + p.clickId);
-          }
-        });
+        m.addEventListener('mouseleave', () => tip.style.display = 'none');
+        m.addEventListener('click', () => alert('Clicked: ' + p.clickId));
 
         host.appendChild(m);
       });
+    })();
+  </script>
+
+  <!-- Theme Switcher -->
+  <script>
+    (function () {
+      const KEY = 'projecthades-theme';
+      const linkEl = document.getElementById('theme-css');
+      const select = document.getElementById('theme');
+      const THEME_FILES = {
+      "1500-1800":           "css/themes/theme-1500-1800.css",
+      "19th-century":        "css/themes/theme-1800.css",
+      "first-half-20th":     "css/themes/theme-1900-1950.css",
+      "second-half-20th":    "css/themes/theme-1950-1990.css",
+      "1990-2025":           "css/themes/theme-1990-2025.css",
+      "2035":                "css/themes/theme-2035.css"
+      };
+
+      function applyTheme(val){
+        const href = THEME_FILES[val] || THEME_FILES["1990-2025"];
+        linkEl.setAttribute('href', href);
+        localStorage.setItem(KEY, val);
+      }
+
+      const saved = localStorage.getItem(KEY) || '1990-2025';
+      select.value = saved;
+      applyTheme(saved);
+      select.addEventListener('change', e => applyTheme(e.target.value));
     })();
   </script>
 </body>

@@ -5,34 +5,29 @@
   <title>HADES — Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
+  <link id="theme-css" rel="stylesheet" href="css/themes/theme-1990-2025.css" />
 </head>
 <body>
 
   <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="images/HadesLogoRed.png" alt="Hades logo" />
-      </a>
-
+      <a class="brand" href="index.html"><img src="images/HadesLogoRed.png" alt="Hades Logo" /></a>
       <nav class="main-nav">
         <a href="index.html" class="active">Home</a>
-        <a href="map.html">Map</a>
         <a href="exhibition.html">Exhibition</a>
         <a href="documentation.html">Documentation</a>
         <a href="disclaimer.html">Disclaimer</a>
       </nav>
-
-      <!-- Theme selector -->
       <div class="theme-select">
         <label for="theme" class="visually-hidden">Theme</label>
         <select id="theme">
-          <option value="1500-1800">1500–1800</option>
-          <option value="19th-century">1800's</option>
-          <option value="second-half-20th">1900-1950</option>
-          <option value="first-half-20th">1950-1990</option>
-           <option value="1990-2025">1990–2025</option>
+          <option value="1990-2025">1990–2025</option>
           <option value="2035">2035</option>
+          <option value="second-half-20th">Second Half 20th</option>
+          <option value="first-half-20th">First Half 20th</option>
+          <option value="19th-century">19th Century</option>
+          <option value="1500-1800">1500–1800</option>
         </select>
       </div>
     </div>
@@ -42,26 +37,18 @@
   <main>
     <section class="hero container">
       <div class="hero-copy">
-        <h1>hades text</h1>
-        <p class="lead">
-          Placeholder blurb. We’ll plug narrative or intro copy here later.
-        </p>
+        <h1>Welcome to the HADES Exhibition</h1>
+        <p class="lead">Explore ancient mythological artifacts reimagined through modern and future aesthetics.</p>
       </div>
-
       <div class="hero-art">
         <img src="images/PortraitZagreus.webp" alt="Zagreus" />
       </div>
     </section>
 
-    <!-- Items carousel -->
     <section class="items container">
-      <div class="items-header">
-        <h2>Items</h2>
-      </div>
-
+      <div class="items-header"><h2>Featured Items</h2></div>
       <div class="carousel">
         <button class="chev left" aria-label="Previous">‹</button>
-
         <div class="track" id="track">
           <article class="card"></article>
           <article class="card"></article>
@@ -69,7 +56,6 @@
           <article class="card"></article>
           <article class="card"></article>
         </div>
-
         <button class="chev right" aria-label="Next">›</button>
       </div>
     </section>
@@ -77,53 +63,42 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">Copyright</div>
+    <div class="container">© Project HADES</div>
   </footer>
 
-  <!-- Simple carousel -->
   <script>
+    // Carousel
     const track = document.getElementById('track');
     const step = () => Math.min(track.clientWidth, 360);
-    document.querySelector('.chev.left').onclick  = () => track.scrollBy({left: -step(), behavior:'smooth'});
-    document.querySelector('.chev.right').onclick = () => track.scrollBy({left:  step(), behavior:'smooth'});
+    document.querySelector('.chev.left').onclick  = () => track.scrollBy({left:-step(),behavior:'smooth'});
+    document.querySelector('.chev.right').onclick = () => track.scrollBy({left: step(),behavior:'smooth'});
   </script>
 
-  <!-- Theme switcher -->
-<script>
-  (function () {
-    const KEY = 'projecthades-theme';
-    const linkEl = document.getElementById('theme-css');
-    const select = document.getElementById('theme');
-
-    // value → css dosyası eşlemesi
-    const THEME_FILES = {
-      "1500-1800":           "css/themes/theme-1500-1800.css",
+  <!-- Theme Switcher -->
+  <script>
+    (function () {
+      const KEY = 'projecthades-theme';
+      const linkEl = document.getElementById('theme-css');
+      const select = document.getElementById('theme');
+      const THEME_FILES = {
+       "1500-1800":           "css/themes/theme-1500-1800.css",
       "19th-century":        "css/themes/theme-1800.css",
       "first-half-20th":     "css/themes/theme-1900-1950.css",
       "second-half-20th":    "css/themes/theme-1950-1990.css",
       "1990-2025":           "css/themes/theme-1990-2025.css",
       "2035":                "css/themes/theme-2035.css"
-    };
+      };
 
-    function applyTheme(val){
-      const href = THEME_FILES[val] || THEME_FILES["1990-2025"];
-      if (linkEl) linkEl.setAttribute('href', href);
-      localStorage.setItem(KEY, val);
-    }
+      function applyTheme(val){
+        const href = THEME_FILES[val] || THEME_FILES["1990-2025"];
+        linkEl.setAttribute('href', href);
+        localStorage.setItem(KEY, val);
+      }
 
-    // yükle
-    const saved = localStorage.getItem(KEY) || '1990-2025';
-    if (select) select.value = saved;
-    applyTheme(saved);
-
-    // dinle
-    if (select) {
+      const saved = localStorage.getItem(KEY) || '1990-2025';
+      select.value = saved;
+      applyTheme(saved);
       select.addEventListener('change', e => applyTheme(e.target.value));
-    }
-  })();
-</script>
-
-      });
     })();
   </script>
 </body>
