@@ -98,3 +98,18 @@ body{
   vertical-align: middle;
   display: block;
 }
+.theme-select select{
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-family: var(--font-text);
+}
+.visually-hidden{
+  position:absolute;
+  left:-9999px;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}

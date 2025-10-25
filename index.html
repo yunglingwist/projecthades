@@ -11,7 +11,10 @@
   <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html"><img src="images/HadesLogoRed.png" alt="Zagreus" /></a>
+      <a class="brand" href="index.html">
+        <img src="images/HadesLogoRed.png" alt="Hades logo" />
+      </a>
+
       <nav class="main-nav">
         <a href="index.html" class="active">Home</a>
         <a href="map.html">Map</a>
@@ -19,6 +22,19 @@
         <a href="documentation.html">Documentation</a>
         <a href="disclaimer.html">Disclaimer</a>
       </nav>
+
+      <!-- Theme selector -->
+      <div class="theme-select">
+        <label for="theme" class="visually-hidden">Theme</label>
+        <select id="theme">
+          <option value="1500-1800">1500–1800</option>
+          <option value="19th-century">1800's</option>
+          <option value="second-half-20th">1900-1950</option>
+          <option value="first-half-20th">1950-1990</option>
+           <option value="1990-2025">1990–2025</option>
+          <option value="2035">2035</option>
+        </select>
+      </div>
     </div>
   </header>
 
@@ -27,29 +43,29 @@
     <section class="hero container">
       <div class="hero-copy">
         <h1>hades text</h1>
-        <p class="lead">Placeholder blurb. We’ll plug narrative or intro copy here later.</p>
+        <p class="lead">
+          Placeholder blurb. We’ll plug narrative or intro copy here later.
+        </p>
       </div>
+
       <div class="hero-art">
         <img src="images/PortraitZagreus.webp" alt="Zagreus" />
       </div>
     </section>
 
-    <!-- Items carousel (placeholder cards) -->
+    <!-- Items carousel -->
     <section class="items container">
       <div class="items-header">
         <h2>Items</h2>
-        <!-- (optional) link to full list -->
       </div>
 
       <div class="carousel">
         <button class="chev left" aria-label="Previous">‹</button>
 
         <div class="track" id="track">
-          <!-- 3 placeholder cards (duplicate/add more as needed) -->
           <article class="card"></article>
           <article class="card"></article>
           <article class="card"></article>
-          <!-- add more to test scroll -->
           <article class="card"></article>
           <article class="card"></article>
         </div>
@@ -64,12 +80,33 @@
     <div class="container">Copyright</div>
   </footer>
 
+  <!-- Simple carousel -->
   <script>
-    // minimal carousel scroll (no libs)
     const track = document.getElementById('track');
-    const step = () => Math.min(track.clientWidth, 360); // one card-ish
+    const step = () => Math.min(track.clientWidth, 360);
     document.querySelector('.chev.left').onclick  = () => track.scrollBy({left: -step(), behavior:'smooth'});
     document.querySelector('.chev.right').onclick = () => track.scrollBy({left:  step(), behavior:'smooth'});
+  </script>
+
+  <!-- Theme switcher -->
+  <script>
+    (function () {
+      const KEY = 'projecthades-theme';
+      const html = document.documentElement;
+      const select = document.getElementById('theme');
+
+      // load saved or default
+      const saved = localStorage.getItem(KEY) || '1990-2025';
+      html.setAttribute('data-theme', saved);
+      select.value = saved;
+
+      // change event
+      select.addEventListener('change', (e) => {
+        const val = e.target.value;
+        html.setAttribute('data-theme', val);
+        localStorage.setItem(KEY, val);
+      });
+    })();
   </script>
 </body>
 </html>
