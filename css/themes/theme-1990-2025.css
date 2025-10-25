@@ -1,0 +1,14 @@
+/* 1990–2025 (default screen) */
+:root{
+  --bg:#0f2035;
+  --fg:#e7d6a3;
+  --gold:#e1b258;
+  --gold-dark:#c69a4b;
+  --muted:#b7a987;
+  --accent: var(--gold);
+  --font-text: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+  --font-display: var(--font-text);
+  /* örn. sayfa arka planı için:
+  body{ background-image:url('/images/bg/1990-2025.jpg'); background-size:cover; background-attachment:fixed; }
+  */
+}

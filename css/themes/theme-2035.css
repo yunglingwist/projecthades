@@ -1,0 +1,11 @@
+/* 2035 (neon/dystopia) */
+:root{
+  --bg:#0B0F14;
+  --fg:#E6EEF8;
+  --gold:#6CF0FF;       /* ana vurgu */
+  --gold-dark:#3CA8B6;  /* kenar/border */
+  --muted:#A7B6C8;
+  --accent:#9A6CFF;     /* ikinci neon */
+  --font-text: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+  --font-display: "Orbitron", "Manrope", system-ui, sans-serif;
+}

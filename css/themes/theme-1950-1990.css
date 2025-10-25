@@ -1,0 +1,11 @@
+/* Second half 20th (Helvetica, canlı kırmızı vurgu) */
+:root{
+  --bg:#FFFFFF;
+  --fg:#101010;
+  --gold:#FF3B30;       /* vurgu */
+  --gold-dark:#cc2f26;
+  --muted:#6b6b6b;
+  --accent:#ff7f77;
+  --font-text: Helvetica, Arial, system-ui, -apple-system, "Segoe UI", Roboto;
+  --font-display: Helvetica, Arial, system-ui, sans-serif;
+}
