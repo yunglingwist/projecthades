@@ -161,19 +161,33 @@ body{
 /* Marker (baklava) */
 .marker{
   position: absolute;
-  left:50%; top:50%;
-  width: var(--marker-size);
-  height: var(--marker-size);
-  transform: translate(-50%,-50%) rotate(45deg);
+  left: 50%; top: 50%;
+  width: clamp(24px, 2.8vw, 42px);   /* biraz büyüttük */
+  height: clamp(24px, 2.8vw, 42px);
+  transform: translate(-50%, -50%) rotate(45deg);
   background: var(--color-accent);
   border: 2px solid var(--color-accent-border);
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: 0 6px 16px rgba(0,0,0,.35);
   cursor: pointer;
   padding: 0;
+  display: flex;               /* içeriği ortalayacağız */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;            /* içteki img taşmasın */
 }
+
 .marker:hover{
-  box-shadow: 0 0 10px var(--color-highlight), 0 6px 16px rgba(0,0,0,.45);
+  box-shadow: 0 0 12px var(--color-highlight), 0 6px 16px rgba(0,0,0,.45);
+}
+
+/* içteki ikon */
+.marker img{
+  width: 110;
+  height: 110%;
+  object-fit: cover;
+  transform: rotate(-45deg);   /* dış kare döndüğü için, içteki ikon düz görünsün */
+  pointer-events: none;        /* tıklama img yerine marker’a gitsin */
 }
 
 /* Tooltip */
