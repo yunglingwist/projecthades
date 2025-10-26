@@ -1,9 +1,9 @@
-/* First half 20th (Futura/modernist mavi) */
+/* First half 20th (Poppins/artdeco) */
 :root{
-  --bg:#FFFFFF;
-  --fg:#0F0F0F;
-  --gold:#004B8D;
-  --gold-dark:#003a6e;
+  --bg:#1A1A40;
+  --fg:#F8F1E7;
+  --gold:#F8F1E7;
+  --gold-dark:#EEB765;
   --muted:#4a4a4a;
   --accent:#4ea5ff;
   --font-text: Futura, "Futura PT", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
