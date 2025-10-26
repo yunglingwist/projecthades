@@ -1,193 +1,184 @@
-
+/* ========= Base tokens (layout-only; themes provide colors/fonts) ========= */
 :root{
- 
-  --max:1100px;
-  --radius:10px;
+  /* layout */
+  --max: 1100px;
+  --radius: 10px;
+  --marker-size: clamp(12px, 1.8vw, 22px);
+
+  /* design tokens (themes override these) */
+  --color-bg: #0b0b0b;                /* fallback only; themes must override */
+  --color-text: #efefef;              /* fallback only */
+  --color-accent: #d4aa5a;            /* fallback only */
+  --color-accent-border: #a28043;     /* fallback only */
+  --color-highlight: #ffdb96;         /* fallback only */
+  --text-muted: #b8b8b8;              /* fallback only */
+  --background-map: none;             /* e.g., url('../../images/maps/map-XXXX.jpg') */
+
+  --font-text: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+  --font-display: var(--font-text);
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
+/* ========= Reset & Body ========= */
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
 body{
   margin:0;
-  background:var(--bg);
-  color:var(--fg);
-  font:16px/1.5 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: 16px/1.5 var(--font-text);
 }
 
-/* simple container */
-.container{width:100%; max-width:var(--max); margin:0 auto; padding:0 20px}
+/* ========= Layout container ========= */
+.container{
+  width:100%;
+  max-width: var(--max);
+  margin:0 auto;
+  padding:0 20px;
+}
 
-/* Header */
+/* ========= Header ========= */
 .site-header{
-  position:sticky; top:0; z-index:10;
-  background:var(--bg);
-  border-bottom:1px solid rgba(225,178,88,.25);
+  position: sticky; top:0; z-index:10;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-accent-border);
 }
-.header-inner{display:flex; align-items:center; gap:28px; padding:14px 0}
+.header-inner{
+  display:flex; align-items:center; gap:28px; padding:14px 0;
+}
 .brand{
   font-weight:800; letter-spacing:.6px; text-decoration:none;
-  color:var(--gold); font-size:28px; line-height:1;
+  color: var(--color-accent); font-size:28px; line-height:1;
 }
-.main-nav{display:flex; gap:18px; margin-left:auto}
+.brand img{
+  max-height:50px; height:auto; width:auto; display:block;
+}
+.main-nav{ display:flex; gap:18px; margin-left:auto; }
 .main-nav a{
-  color:var(--fg); text-decoration:none; opacity:.9;
+  color: var(--color-text); text-decoration:none; opacity:.9;
 }
-.main-nav a:hover,.main-nav a.active{color:var(--gold)}
+.main-nav a:hover,
+.main-nav a.active{ color: var(--color-accent); }
 
-/* Hero */
-.hero{display:grid; grid-template-columns:1.1fr .9fr; gap:24px; padding:36px 0 20px}
-.hero-copy h1{margin:.2rem 0 1rem; font-size:28px; color:var(--fg)}
-.hero-copy .lead{color:var(--muted); max-width:44ch}
-.hero-art{display:flex; justify-content:center; align-items:flex-start}
-.hero-art img{max-width:320px; height:auto; display:block}
-
-/* Items */
-.items{padding:10px 0 60px}
-.items-header h2{font-size:22px; margin:18px 0}
-.carousel{position:relative; display:flex; align-items:center; gap:10px}
-.track{
-  display:grid;
-  grid-auto-flow:column;
-  grid-auto-columns: minmax(240px, 1fr);
-  gap:16px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  padding:12px 8px;
-}
-.track::-webkit-scrollbar{height:8px}
-.track::-webkit-scrollbar-thumb{background:rgba(225,178,88,.35); border-radius:20px}
-
-.card{
-  height:180px;
-  background:var(--gold);
-  border:3px solid var(--gold-dark);
-  border-radius:var(--radius);
-  box-shadow:0 2px 0 0 rgba(0,0,0,.25) inset;
-  scroll-snap-align:start;
-}
-
-/* chevrons */
-.chev{
-  background:none; color:var(--gold); border:0;
-  font-size:36px; line-height:1;
-  width:40px; height:40px; cursor:pointer;
-}
-.chev:hover{color:#ffd991}
-
-/* Footer bar */
-.site-footer{
-  background:var(--gold);
-  color:#1e1e1e;
-  text-align:center;
-  padding:6px 0;
-  border-top:3px solid var(--gold-dark);
-}
-
-/* responsive tweaks */
-@media (max-width: 880px){
-  .hero{grid-template-columns:1fr; text-align:left}
-  .hero-art{justify-content:flex-start}
-}
-.brand img {
-  max-height: 50px;
-  height: auto;
-  width: auto;
-  display: block;
-}
 .theme-select select{
-  background: var(--bg);
-  color: var(--fg);
-  border: 1px solid var(--accent);
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-accent);
   border-radius: 6px;
   padding: 4px 8px;
   font-family: var(--font-text);
 }
+
+/* A11y helpers */
 .visually-hidden{
-  position:absolute;
-  left:-9999px;
-  width:1px;
-  height:1px;
-  overflow:hidden;
+  position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;
 }
-#map { display:block; width:100%; height:auto; }
-#hotspots { position:absolute; inset:0; pointer-events:none; }
-/* --- Exhibition map layout --- */
-.map-stage { padding: 16px 0 48px; }
+
+/* ========= Hero ========= */
+.hero{
+  display:grid; grid-template-columns: 1.1fr .9fr; gap:24px;
+  padding:36px 0 20px;
+}
+.hero-copy h1{ margin:.2rem 0 1rem; font-size:28px; color: var(--color-text); }
+.hero-copy .lead{ color: var(--text-muted); max-width:44ch; }
+.hero-art{ display:flex; justify-content:center; align-items:flex-start; }
+.hero-art img{ max-width:320px; height:auto; display:block; }
+
+/* ========= Carousel (cards) ========= */
+.items{ padding:10px 0 60px; }
+.items-header h2{ font-size:22px; margin:18px 0; }
+.carousel{ position:relative; display:flex; align-items:center; gap:10px; }
+
+.track{
+  display:grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(240px, 1fr);
+  gap:16px;
+  overflow-x:auto;
+  scroll-snap-type: x mandatory;
+  padding:12px 8px;
+}
+
+.card{
+  height:180px;
+  background: var(--color-accent);
+  border: 3px solid var(--color-accent-border);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 0 0 rgba(0,0,0,.25) inset;
+  scroll-snap-align: start;
+}
+
+/* chevrons */
+.chev{
+  background:none; color: var(--color-accent); border:0;
+  font-size:36px; line-height:1;
+  width:40px; height:40px; cursor:pointer;
+}
+.chev:hover{ color: var(--color-highlight); }
+
+/* ========= Footer ========= */
+.site-footer{
+  background: var(--color-accent);
+  color: var(--color-bg);
+  text-align:center;
+  padding:6px 0;
+  border-top: 3px solid var(--color-accent-border);
+}
+
+/* ========= Exhibition map (CSS-only background per theme) ========= */
+.map-stage{ padding:16px 0 48px; }
 
 .map-wrap{
-  position: relative;         /* marker overlay bunun içinde hizalanır */
-  display: inline-block;       /* img boyutuna sıkı sarılsın */
-  max-width: 100%;             /* responsive genişlik */
-  line-height: 0;              /* img altındaki boşlukları kaldırır */
-}
-
-#map{
+  position: relative;
   display: block;
+  max-width: 100%;
+  line-height: 0; /* img boşluklarını önler */
+}
+
+/* Harita: görseli tema dosyası belirler ( --background-map ) */
+#map{
   width: 100%;
-  height: auto;                /* oransal büyüyüp küçülür */
+  aspect-ratio: 1280 / 2571;   /* kendi haritanın oranını koru */
+  background-image: var(--background-map);
+  background-size: cover;      /* alternatif: contain */
+  background-position: center;
+  border: 2px solid var(--color-accent-border);
+  border-radius: 8px;
 }
 
-#markers{
-  position: absolute;
-  inset: 0;                    /* img’nin kapladığı alana tam oturur */
-  /* pointer-events burada AUTO kalsın ki butonlar tıklanabilsin */
-}
+/* Overlay (marker katmanı) */
+#markers{ position: absolute; inset: 0; }
 
-/* Responsive marker boyutu ve görünümü */
-:root{ --marker-size: clamp(12px, 1.8vw, 22px); }
-
+/* Marker (baklava) */
 .marker{
   position: absolute;
-  left: 50%; top: 50%;
+  left:50%; top:50%;
   width: var(--marker-size);
   height: var(--marker-size);
-  transform: translate(-50%, -50%) rotate(45deg);
-  background: var(--gold);
-  border: 2px solid var(--gold-dark);
+  transform: translate(-50%,-50%) rotate(45deg);
+  background: var(--color-accent);
+  border: 2px solid var(--color-accent-border);
   border-radius: 2px;
   box-shadow: 0 6px 16px rgba(0,0,0,.35);
   cursor: pointer;
   padding: 0;
 }
-
-/* Hover glow – tema renkleriyle çalışır */
 .marker:hover{
-  box-shadow: 0 0 0 4px rgba(225,178,88,.25), 0 6px 16px rgba(0,0,0,.45);
+  box-shadow: 0 0 10px var(--color-highlight), 0 6px 16px rgba(0,0,0,.45);
 }
 
-/* Basit tooltip */
+/* Tooltip */
 .tooltip{
-  position: fixed;
-  z-index: 20;
+  position: fixed; z-index: 20;
   background: rgba(0,0,0,.75);
-  color: #fff;
-  font-size: 12px;
-  padding: 6px 8px;
-  border-radius: 6px;
+  color: #fff; font-size: 12px;
+  padding: 6px 8px; border-radius: 6px;
   pointer-events: none;
   transform: translate(0, -6px);
   white-space: nowrap;
 }
-.map-wrap{
-  position: relative;
-  display: block;
-  max-width: 100%;
-}
 
-/* Harita alanı: temadan gelen görseli arkaplan olarak doldur */
-#map{
-  width: 100%;
-  /* Oranı kendi görseline göre ayarla: */
-  aspect-ratio: 1280 / 2571; 
-  background-image: var(--map-url);
-  background-size: cover;      /* istersen contain */
-  background-position: center;
-  border: 2px solid rgba(225,178,88,.35);
-  border-radius: 8px;
-}
-
-/* Marker katmanı aynı kalır */
-#markers{
-  position: absolute;
-  inset: 0;
+/* ========= Responsive ========= */
+@media (max-width: 880px){
+  .hero{ grid-template-columns:1fr; text-align:left; }
+  .hero-art{ justify-content:flex-start; }
 }

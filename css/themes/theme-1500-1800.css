@@ -1,12 +1,19 @@
-/* 1500–1800 (Garamond/serif, kağıt tonları) */
+/* 1500–1800 (Garamond/serif, paper tones) */
 :root{
-  --bg:#FAF7F0;
-  --fg:#1B1B1B;
-  --gold:#7A4B2E;
-  --gold-dark:#5d3922;
-  --muted:#5d5a54;
-  --accent:#a66d49;
+  /* design tokens (functional names) */
+  --color-bg: #FAF7F0;
+  --color-text: #1B1B1B;
+
+  --color-accent: #7A4B2E;         /* primary accent (was --gold) */
+  --color-accent-border: #5D3922;  /* accent border (was --gold-dark) */
+  --color-highlight: #A66D49;      /* hover/glow accent */
+  --text-muted: #5D5A54;
+
+  /* map image for this theme
+     NOTE: path is from css/themes/ to images/...  */
+  --background-map: url('../images/Map3.jpg');
+
+  /* typography */
   --font-text: "Garamond", "EB Garamond", Georgia, ui-serif, serif;
   --font-display: "Garamond", "EB Garamond", Georgia, serif;
-  --map-url: url('../images/GameMap.jpg');
 }

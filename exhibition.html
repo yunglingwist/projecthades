@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <title>HADES — Exhibition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Base + Theme -->
   <link rel="stylesheet" href="css/style.css" />
   <link id="theme-css" rel="stylesheet" href="css/themes/theme-1990-2025.css" />
 </head>
@@ -34,54 +35,59 @@
   </header>
 
   <main class="exhibit container">
-    <h1 class="sr-only">Exhibition Map</h1>
+    <h1 class="visually-hidden">Exhibition Map</h1>
 
+    <!-- Map stage -->
     <section class="map-stage">
       <div class="map-wrap">
+        <!-- CSS background via --background-map -->
         <div id="map" role="img" aria-label="Hades exhibition map"></div>
-        <div id="markers"></div>
+        <div id="markers" aria-label="Exhibition hotspots"></div>
       </div>
     </section>
   </main>
 
-  <div class="tooltip" id="tooltip"></div>
+  <!-- Tooltip -->
+  <div class="tooltip" id="tooltip" hidden></div>
 
+  <!-- Inline data (offline) -->
   <script>
+    // Positions are percentage of the map box (0–100)
     const MARKERS = [
-      { x: 50, y: 86, label: 'Obol', clickId: 'obol-coin' },
+      { x: 50, y: 86, label: 'Obol',  clickId: 'obol-coin' },
       { x: 62, y: 78, label: 'Blade', clickId: 'stygian-blade' },
-      { x: 30, y: 18, label: 'Vase', clickId: 'vase' }
+      { x: 30, y: 18, label: 'Vase',  clickId: 'vase' }
     ];
+  </script>
 
+  <!-- Draw markers -->
+  <script>
     (function(){
       const host = document.getElementById('markers');
       const tip  = document.getElementById('tooltip');
+      host.innerHTML = '';
 
       MARKERS.forEach(p => {
-        const m = document.createElement('div');
+        const m = document.createElement('button');
+        m.type = 'button';
         m.className = 'marker';
         m.style.left = p.x + '%';
         m.style.top  = p.y + '%';
-        m.style.position = 'absolute';
-        m.style.width = '20px';
-        m.style.height = '20px';
-        m.style.background = 'var(--gold)';
-        m.style.border = '2px solid var(--gold-dark)';
-        m.style.borderRadius = '2px';
-        m.style.transform = 'translate(-50%,-50%) rotate(45deg)';
-        m.style.boxShadow = '0 6px 16px rgba(0,0,0,.35)';
-        m.style.cursor = 'pointer';
+        m.setAttribute('aria-label', p.label);
 
         m.addEventListener('mouseenter', () => {
-          tip.style.display = 'block';
+          tip.hidden = false;
           tip.textContent = p.label;
         });
         m.addEventListener('mousemove', (e) => {
           tip.style.left = (e.clientX + 10) + 'px';
           tip.style.top  = (e.clientY + 10) + 'px';
         });
-        m.addEventListener('mouseleave', () => tip.style.display = 'none');
-        m.addEventListener('click', () => alert('Clicked: ' + p.clickId));
+        m.addEventListener('mouseleave', () => { tip.hidden = true; });
+        m.addEventListener('click', () => {
+          // ileride: location.href = `item.html?id=${encodeURIComponent(p.clickId)}`
+          alert('Clicked: ' + p.clickId);
+        });
 
         host.appendChild(m);
       });
@@ -94,13 +100,15 @@
       const KEY = 'projecthades-theme';
       const linkEl = document.getElementById('theme-css');
       const select = document.getElementById('theme');
+
+      /* DİKKAT: dosya adlarını repo’daki gerçek tema isimlerinle eşleştir */
       const THEME_FILES = {
-      "1500-1800":           "css/themes/theme-1500-1800.css",
-      "19th-century":        "css/themes/theme-1800.css",
-      "first-half-20th":     "css/themes/theme-1900-1950.css",
-      "second-half-20th":    "css/themes/theme-1950-1990.css",
-      "1990-2025":           "css/themes/theme-1990-2025.css",
-      "2035":                "css/themes/theme-2035.css"
+        "1500-1800":        "css/themes/theme-1500-1800.css",
+        "19th-century":     "css/themes/theme-19th-century.css",
+        "first-half-20th":  "css/themes/theme-first-half-20th.css",
+        "second-half-20th": "css/themes/theme-second-half-20th.css",
+        "1990-2025":        "css/themes/theme-1990-2025.css",
+        "2035":             "css/themes/theme-2035.css"
       };
 
       function applyTheme(val){
