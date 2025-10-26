@@ -1,10 +1,6 @@
 
 :root{
-  --bg:#0f2035;         /* deep navy */
-  --fg:#e7d6a3;         /* warm gold for text */
-  --gold:#e1b258;       /* accent gold (cards, footer) */
-  --gold-dark:#c69a4b;  /* borders/shadows */
-  --muted:#b7a987;
+ 
   --max:1100px;
   --radius:10px;
 }
