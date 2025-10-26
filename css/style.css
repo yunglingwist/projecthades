@@ -183,9 +183,9 @@ body{
 
 /* içteki ikon */
 .marker img{
-  width: 110;
-  height: 110%;
-  object-fit: cover;
+width: 100%; /* Resmi kapsayıcıya göre genişletir */
+height: auto; /* Yüksekliği otomatik ayarlar */
+object-fit: contain; /* Resmin orantısını korur */
   transform: rotate(-45deg);   /* dış kare döndüğü için, içteki ikon düz görünsün */
   pointer-events: none;        /* tıklama img yerine marker’a gitsin */
 }
