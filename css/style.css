@@ -115,3 +115,83 @@ body{
 }
 #map { display:block; width:100%; height:auto; }
 #hotspots { position:absolute; inset:0; pointer-events:none; }
+/* --- Exhibition map layout --- */
+.map-stage { padding: 16px 0 48px; }
+
+.map-wrap{
+  position: relative;         /* marker overlay bunun içinde hizalanır */
+  display: inline-block;       /* img boyutuna sıkı sarılsın */
+  max-width: 100%;             /* responsive genişlik */
+  line-height: 0;              /* img altındaki boşlukları kaldırır */
+}
+
+#map{
+  display: block;
+  width: 100%;
+  height: auto;                /* oransal büyüyüp küçülür */
+}
+
+#markers{
+  position: absolute;
+  inset: 0;                    /* img’nin kapladığı alana tam oturur */
+  /* pointer-events burada AUTO kalsın ki butonlar tıklanabilsin */
+}
+
+/* Responsive marker boyutu ve görünümü */
+:root{ --marker-size: clamp(12px, 1.8vw, 22px); }
+
+.marker{
+  position: absolute;
+  left: 50%; top: 50%;
+  width: var(--marker-size);
+  height: var(--marker-size);
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--gold);
+  border: 2px solid var(--gold-dark);
+  border-radius: 2px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.35);
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Hover glow – tema renkleriyle çalışır */
+.marker:hover{
+  box-shadow: 0 0 0 4px rgba(225,178,88,.25), 0 6px 16px rgba(0,0,0,.45);
+}
+
+/* Basit tooltip */
+.tooltip{
+  position: fixed;
+  z-index: 20;
+  background: rgba(0,0,0,.75);
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  pointer-events: none;
+  transform: translate(0, -6px);
+  white-space: nowrap;
+}
+.map-wrap{
+  position: relative;
+  display: block;
+  max-width: 100%;
+}
+
+/* Harita alanı: temadan gelen görseli arkaplan olarak doldur */
+#map{
+  width: 100%;
+  /* Oranı kendi görseline göre ayarla: */
+  aspect-ratio: 1280 / 2571; 
+  background-image: var(--map-url);
+  background-size: cover;      /* istersen contain */
+  background-position: center;
+  border: 2px solid rgba(225,178,88,.35);
+  border-radius: 8px;
+}
+
+/* Marker katmanı aynı kalır */
+#markers{
+  position: absolute;
+  inset: 0;
+}

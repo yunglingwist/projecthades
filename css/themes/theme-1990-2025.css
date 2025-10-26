@@ -8,6 +8,7 @@
   --accent: var(--gold);
   --font-text: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
   --font-display: var(--font-text);
+  --map-url: url('../images/GameMap.jpg');
   /* örn. sayfa arka planı için:
   body{ background-image:url('/images/bg/1990-2025.jpg'); background-size:cover; background-attachment:fixed; }
   */
