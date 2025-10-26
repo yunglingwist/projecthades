@@ -11,7 +11,7 @@
 
   /* map image for this theme
      NOTE: path is from css/themes/ to images/...  */
-  --background-map: url('../images/Map3.jpg');
+  --background-map: url('../images/GameMap.jpg');
 
   /* typography */
   --font-text: "Garamond", "EB Garamond", Georgia, ui-serif, serif;

@@ -1,12 +1,18 @@
-/* 19th Century (Didot/serif, sıcak kahve tonları) */
+/* 19th Century (Didot/serif, warm coffee tones) */
 :root{
-  --bg:#FFFFFF;
-  --fg:#111111;
-  --gold:#7C3A2E;
-  --gold-dark:#5f2d23;
-  --muted:#6e6258;
-  --accent:#b45d46;
+  /* functional color tokens */
+  --color-bg: #FFFFFF;
+  --color-text: #111111;
+
+  --color-accent: #7C3A2E;         /* primary accent (was --gold) */
+  --color-accent-border: #5F2D23;  /* darker accent border (was --gold-dark) */
+  --color-highlight: #B45D46;      /* hover / glow accent */
+  --text-muted: #6E6258;
+
+  /* map background for this theme */
+  --background-map: url('../images/GameMap.jpg');
+
+  /* typography */
   --font-text: Georgia, "Times New Roman", ui-serif, serif;
   --font-display: "Didot", "Bodoni MT", Georgia, serif;
-  --map-url: url('../images/GameMap.jpg');
 }

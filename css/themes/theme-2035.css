@@ -1,12 +1,18 @@
-/* 2035 (neon/dystopia) */
+/* 2035 (neon / dystopia future) */
 :root{
-  --bg:#0B0F14;
-  --fg:#E6EEF8;
-  --gold:#6CF0FF;       /* ana vurgu */
-  --gold-dark:#3CA8B6;  /* kenar/border */
-  --muted:#A7B6C8;
-  --accent:#9A6CFF;     /* ikinci neon */
+  /* functional color tokens */
+  --color-bg: #0B0F14;
+  --color-text: #E6EEF8;
+
+  --color-accent: #6CF0FF;          /* primary neon accent */
+  --color-accent-border: #3CA8B6;   /* border / shadow tone */
+  --color-highlight: #9A6CFF;       /* secondary neon accent */
+  --text-muted: #A7B6C8;
+
+  /* map background for this theme */
+  --background-map: url('../images/Map6.jpg');
+
+  /* typography */
   --font-text: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
   --font-display: "Orbitron", "Manrope", system-ui, sans-serif;
-  --map-url: url('../images/Map6.jpg');
 }

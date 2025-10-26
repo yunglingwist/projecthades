@@ -1,15 +1,26 @@
-/* 1990–2025 (default screen) */
+/* 1990–2025 (default screen theme) */
 :root{
-  --bg:#0f2035;
-  --fg:#e7d6a3;
-  --gold:#e1b258;
-  --gold-dark:#c69a4b;
-  --muted:#b7a987;
-  --accent: var(--gold);
+  /* functional color tokens */
+  --color-bg: #0F2035;
+  --color-text: #E7D6A3;
+
+  --color-accent: #E1B258;          /* primary accent */
+  --color-accent-border: #C69A4B;   /* darker border accent */
+  --color-highlight: #FFD991;       /* hover/highlight */
+  --text-muted: #B7A987;
+
+  /* map background for this theme */
+  --background-map: url('../images/Map4.jpg');
+
+  /* typography */
   --font-text: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
   --font-display: var(--font-text);
-  --map-url: url('../images/GameMap.jpg');
-  /* örn. sayfa arka planı için:
-  body{ background-image:url('/images/bg/1990-2025.jpg'); background-size:cover; background-attachment:fixed; }
+
+  /* örnek: tema arka planı için (isteğe bağlı)
+  body{
+    background-image: url('../../images/bg/1990-2025.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+  }
   */
 }
