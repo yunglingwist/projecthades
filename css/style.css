@@ -15,8 +15,8 @@
   --background-map: none;             /* e.g., url('../../images/maps/map-XXXX.jpg') */
 
   /* default fonts (themes override) */
-  --font-text: 'Poppins', system-ui, sans-serif;
-  --font-display: 'Cinzel', serif;
+  --font-text: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+  --font-display: var(--font-text);
   }
 /*font imports*/
 @font-face {
