@@ -180,9 +180,22 @@ body{
   cursor: pointer;
   padding: 0;
 }
+
+/* İÇTEKİ GÖRSEL – ayrı selektör olmalı (SCSS nesting değil) */
+.marker img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: rotate(-45deg); /* dıştaki 45°’i geri al */
+  pointer-events: none;
+}
+
 .marker:hover{
   box-shadow: 0 0 10px var(--color-highlight), 0 6px 16px rgba(0,0,0,.45);
 }
+
 
 /* Tooltip */
 .tooltip{
