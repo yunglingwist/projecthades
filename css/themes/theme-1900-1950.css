@@ -1,10 +1,10 @@
 /* First Half 20th (Poppins / Art Deco inspired) */
 :root{
   /* functional color tokens */
-  --color-bg: #1A1A40;
-  --color-text: #F8F1E7;
+  --color-bg: hsl(240, 42%, 18%);
+  --color-text: #f8f1e7;
 
-  --color-accent: #F8F1E7;          /* primary accent */
+  --color-accent: #f8f1e77f;          /* color accent*/
   --color-accent-border: #EEB765;   /* border accent */
   --color-highlight: #B03A2E;       /* hover accent */
   --text-muted: #4A4A4A;
