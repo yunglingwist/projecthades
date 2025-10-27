@@ -48,7 +48,17 @@
 
   <div class="tooltip" id="tooltip" hidden></div>
 
-  <!-- Inline data (offline) -->
+
+  <!-- TextBox -->
+<div id="map-textboxes">
+  <div class="map-textbox">Surface</div>
+  <div class="map-textbox">Elysium</div>
+  <div class="map-textbox">Asphodel</div>
+  <div class="map-textbox">Tartarus</div>
+  <div class="map-textbox">House of Hades</div>
+</div>
+
+  <!-- Marker Data -->
   <script>
     // Positions are percentage of the map box (0–100)
     const MARKERS = [
@@ -90,7 +100,7 @@ MARKERS.forEach(p => {
   dot.className = 'marker-dot';
   m.appendChild(dot);
 
-  // ikon resmi (ekleme burası)
+  // icon image 
   const icon = document.createElement('img');
   icon.src = p.icon;
   icon.alt = p.label;

@@ -152,18 +152,46 @@ body{
   line-height: 0; /* img boşluklarını önler */
 }
 
-/* Harita: görseli tema dosyası belirler ( --background-map ) */
+/* MAP( --background-map ) */
 #map{
   width: 100%;
-  aspect-ratio: 1280 / 2571;   /* kendi haritanın oranını koru */
+  aspect-ratio: 1280 / 2571; 
   background-image: var(--background-map);
-  background-size: cover;      /* alternatif: contain */
+  background-size: cover;     
   background-position: center;
   border: 2px solid var(--color-accent-border);
   border-radius: 8px;
 }
 
-/* Overlay (marker katmanı) */
+
+
+/* Text boxes */
+#map-textboxes {
+  position: absolute;
+  left: 10px;        /* distance from left edge */
+  top: 50%;          /* center vertically */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;         /* space between boxes */
+  z-index: 10;       /* on top of map, but behind markers if markers have higher z-index */
+}
+
+/* Individual text boxes */
+.map-textbox {
+  background-color: #EEB765; /* match your marker style */
+  color: #222;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: sans-serif;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  white-space: nowrap; /* prevents text wrapping */
+  cursor: default;
+  transition: transform 0.2s;
+}
+
+/* Overlay (marker layer) */
 #markers{ position: absolute; inset: 0; }
 
 /* Marker (baklava) */
