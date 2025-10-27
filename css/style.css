@@ -213,3 +213,55 @@ body{
   .hero{ grid-template-columns:1fr; text-align:left; }
   .hero-art{ justify-content:flex-start; }
 }
+
+/* ========= Team section ========= */
+.team-section {
+  text-align: center;
+  background-color: var(--color-bg);
+  padding: 30px 10px;
+  color: var(--color-text);
+}
+
+.team {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.member {
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-accent-border);
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.member img {
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid var(--color-accent-border);
+}
+
+.member p {
+  margin-top: 8px;
+  color: var(--color-bg);
+}
+/* ========= Project info ========= */
+.project-info,
+.process,
+.reflection {
+  background-color: var(--color-accent);
+  border-radius: 12px;
+  padding: 30px;
+  margin: 40px 0;
+  color: var(--color-bg);
+  border: 2px solid var(--color-accent-border);
+}
+
+.project-info h2,
+.process h2,
+.reflection h2 {
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
