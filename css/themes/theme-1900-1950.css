@@ -13,6 +13,6 @@
   --background-map: url('../images/Map3.jpg');
 
   /* typography */
-  --font-text: 'Poppins', sans-serif;
-  --font-display: 'Poppins', sans-serif;
+  --font-text: 'Poppins';
+  --font-display: 'Poppins';
 }

@@ -5,7 +5,7 @@
   --color-text: #E7D6A3;
 
   --color-accent: #E1B258;          /* primary accent */
-  --color-accent-border: #C69A4B;   /* darker border accent */
+  --color-accent-border: #C69A4B;   /* border accent */
   --color-highlight: #FFD991;       /* hover/highlight */
   --text-muted: #B7A987;
 
@@ -13,8 +13,8 @@
   --background-map: url('../images/Map4.jpg');
 
   /* typography */
-  --font-text: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
-  --font-display: var(--font-text);
+  --font-text: 'Space Mono';
+  --font-display: 'Space Mono';
 
   /* örnek: tema arka planı için (isteğe bağlı)
   body{

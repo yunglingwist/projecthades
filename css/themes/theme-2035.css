@@ -1,4 +1,4 @@
-/* 2035 (neon / dystopia future) */
+/* 2035 (Orbitron /neon futuristic) */
 :root{
   /* functional color tokens */
   --color-bg: #0B0F14;
@@ -13,6 +13,6 @@
   --background-map: url('../images/Map6.jpg');
 
   /* typography */
-  --font-text: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
-  --font-display: "Orbitron", "Manrope", system-ui, sans-serif;
+  --font-text: 'Orbitron';
+  --font-display: 'Orbitron';
 }

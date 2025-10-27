@@ -13,6 +13,6 @@
   --background-map: url('../images/Map4.jpg');
 
   /* typography */
-  --font-text: 'Bangers', sans-serif;
-  --font-display: 'Bangers', sans-serif;
+  --font-text: 'Bangers';
+  --font-display: 'Bangers';
 }
