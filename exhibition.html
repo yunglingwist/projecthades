@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Base + Theme -->
   <link rel="stylesheet" href="css/style.css" />
-  <link id="theme-css" rel="stylesheet" href="css/themes/theme-1990-2025.css" />
+  <link id="theme-css" rel="stylesheet" href="css/themes/theme-1990-2010.css" />
 </head>
 <body>
 
@@ -128,17 +128,17 @@ MARKERS.forEach(p => {
         "1800s":     "css/themes/theme-1800.css",
         "1900-1950":  "css/themes/theme-1900-1950.css",
         "1950-1990": "css/themes/theme-1950-1990.css",
-        "1990-2010":        "css/themes/theme-1990-2025.css",
+        "1990-2010":        "css/themes/theme-1990-2010.css",
         "2035":             "css/themes/theme-2035.css"
       };
 
       function applyTheme(val){
-        const href = THEME_FILES[val] || THEME_FILES["1990-2025"];
+        const href = THEME_FILES[val] || THEME_FILES["1990-2010"];
         linkEl.setAttribute('href', href);
         localStorage.setItem(KEY, val);
       }
 
-      const saved = localStorage.getItem(KEY) || '1990-2025';
+      const saved = localStorage.getItem(KEY) || '1990-2010';
       select.value = saved;
       applyTheme(saved);
       select.addEventListener('change', e => applyTheme(e.target.value));
