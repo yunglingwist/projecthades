@@ -9,13 +9,13 @@
 </head>
 <body>
 
-  <!-- Header -->
+   <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html"><img src="images/HadesLogoRed.png" alt="Hades Logo" /></a>
       <nav class="main-nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="exhibition.html">Exhibition</a>
+        <a href="index.html">Home</a>
+        <a href="exhibition.html" class="active">Exhibition</a>
         <a href="map.html">Map</a>
         <a href="documentation.html">Documentation</a>
         <a href="disclaimer.html">Disclaimer</a>
@@ -23,12 +23,12 @@
       <div class="theme-select">
         <label for="theme" class="visually-hidden">Theme</label>
         <select id="theme">
-          <option value="1990-2025">1990–2025</option>
-          <option value="2035">2035</option>
-          <option value="second-half-20th">Second Half 20th</option>
-          <option value="first-half-20th">First Half 20th</option>
-          <option value="19th-century">19th Century</option>
+          <option value="1800s">1800s</option>
           <option value="1500-1800">1500–1800</option>
+          <option value="1900-1950">1900-1950</option>
+          <option value="1950-1990">1950-1990</option>
+          <option value="1990-2010">1990–2010</option>
+          <option value="2035">2035</option>
         </select>
       </div>
     </div>
@@ -78,32 +78,33 @@
   </footer>
 
 
-  <!-- Theme Switcher -->
+ <!-- Theme Switcher -->
   <script>
     (function () {
       const KEY = 'projecthades-theme';
       const linkEl = document.getElementById('theme-css');
       const select = document.getElementById('theme');
+
       const THEME_FILES = {
-       "1500-1800":           "css/themes/theme-1500-1800.css",
-      "19th-century":        "css/themes/theme-1800.css",
-      "first-half-20th":     "css/themes/theme-1900-1950.css",
-      "second-half-20th":    "css/themes/theme-1950-1990.css",
-      "1990-2025":           "css/themes/theme-1990-2025.css",
-      "2035":                "css/themes/theme-2035.css"
+        "1500-1800":        "css/themes/theme-1500-1800.css",
+        "1800s":     "css/themes/theme-1800.css",
+        "1900-1950":  "css/themes/theme-1900-1950.css",
+        "1950-1990": "css/themes/theme-1950-1990.css",
+        "1990-2010":        "css/themes/theme-1990-2010.css",
+        "2035":             "css/themes/theme-2035.css"
       };
 
       function applyTheme(val){
-        const href = THEME_FILES[val] || THEME_FILES["1990-2025"];
+        const href = THEME_FILES[val] || THEME_FILES["1990-2010"];
         linkEl.setAttribute('href', href);
         localStorage.setItem(KEY, val);
       }
 
-      const saved = localStorage.getItem(KEY) || '1990-2025';
+      const saved = localStorage.getItem(KEY) || '1990-2010';
       select.value = saved;
       applyTheme(saved);
       select.addEventListener('change', e => applyTheme(e.target.value));
-    });
+    })();
   </script>
 </body>
 </html>
