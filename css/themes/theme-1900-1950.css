@@ -1,18 +1,18 @@
-/* First Half 20th (Futura / Art Deco inspired) */
+/* First Half 20th (Poppins / Art Deco inspired) */
 :root{
   /* functional color tokens */
   --color-bg: #1A1A40;
   --color-text: #F8F1E7;
 
-  --color-accent: #F8F1E7;          /* primary accent (was --gold) */
-  --color-accent-border: #EEB765;   /* border / secondary accent */
-  --color-highlight: #4EA5FF;       /* hover / neon blue accent */
+  --color-accent: #F8F1E7;          /* primary accent */
+  --color-accent-border: #EEB765;   /* border accent */
+  --color-highlight: #B03A2E;       /* hover accent */
   --text-muted: #4A4A4A;
 
   /* map background for this theme */
   --background-map: url('../images/Map3.jpg');
 
   /* typography */
-  --font-text: Futura, "Futura PT", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
-  --font-display: Futura, "Futura PT", system-ui, sans-serif;
+  --font-text: 'Poppins', sans-serif;
+  --font-display: 'Poppins', sans-serif;
 }

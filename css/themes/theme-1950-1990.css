@@ -1,18 +1,18 @@
-/* Second Half 20th (Helvetica, vivid red accents) */
+/* Second Half 20th (Bangers, Pop-art inspired ) */
 :root{
   /* functional color tokens */
-  --color-bg: #FFFFFF;
-  --color-text: #101010;
+  --color-bg: #FFF200;
+  --color-text: #DC35C7;
 
-  --color-accent: #FF3B30;          /* primary accent (bright red) */
-  --color-accent-border: #CC2F26;   /* darker border shade */
-  --color-highlight: #FF7F77;       /* hover / highlight tone */
-  --text-muted: #6B6B6B;
+  --color-accent: #00BFFF;          /* primary accent */
+  --color-accent-border: #0B0C10;   /* border shade */
+  --color-highlight: #F5F5F5;       /* hover tone */
+  --text-muted: #0B0C10;
 
   /* map background for this theme */
   --background-map: url('../images/Map4.jpg');
 
   /* typography */
-  --font-text: Helvetica, Arial, system-ui, -apple-system, "Segoe UI", Roboto;
-  --font-display: Helvetica, Arial, system-ui, sans-serif;
+  --font-text: 'Bangers', sans-serif;
+  --font-display: 'Bangers', sans-serif;
 }
