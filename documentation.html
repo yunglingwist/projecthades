@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>HADES — Home</title>
+  <title>HADES — Documentation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/style.css" />
   <link id="theme-css" rel="stylesheet" href="css/themes/theme-1990-2025.css" />
@@ -14,9 +14,10 @@
     <div class="container header-inner">
       <a class="brand" href="index.html"><img src="images/HadesLogoRed.png" alt="Hades Logo" /></a>
       <nav class="main-nav">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="exhibition.html">Exhibition</a>
-        <a href="documentation.html" class="active">Documentation</a>
+        <a href="map.html">Map</a>
+        <a href="documentation.html">Documentation</a>
         <a href="disclaimer.html">Disclaimer</a>
       </nav>
       <div class="theme-select">
@@ -33,14 +34,76 @@
     </div>
   </header>
 
+  <!-- Team -->
+ <section class="team" style="background-color: #f7f7f7; padding: 50px 0; border-radius: 12px; margin: 40px 0;">
+  <h2 style="text-align: center; color: var(--color-accent); margin-bottom: 20px;">Meet the Team</h2>
+  <div class="team-photos" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+    
+    <figure style="background: #fff; border: 2px solid var(--color-accent-border); border-radius: 10px; padding: 10px; width: 200px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+      <img src="images/ceyda.jpg" alt="CEYDA UYAR" style="width: 100%; border-radius: 8px;">
+      <figcaption style="margin-top: 8px; font-size: 0.95rem; color: #333;">Ceyda Uyar</figcaption>
+    </figure>
 
+    <figure style="background: #fff; border: 2px solid var(--color-accent-border); border-radius: 10px; padding: 10px; width: 200px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+      <img src="images/atakan.jpg" alt="ATAKAN KAYI" style="width: 100%; border-radius: 8px;">
+      <figcaption style="margin-top: 8px; font-size: 0.95rem; color: #333;">[Colleague 1’s Name]</figcaption>
+    </figure>
 
+    <figure style="background: #fff; border: 2px solid var(--color-accent-border); border-radius: 10px; padding: 10px; width: 200px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+      <img src="images/yigit.jpg" alt="YIGIT AK" style="width: 100%; border-radius: 8px;">
+      <figcaption style="margin-top: 8px; font-size: 0.95rem; color: #333;">[Colleague 2’s Name]</figcaption>
+    </figure>
 
+  </div>
+</section>
 
-    <!-- Footer -->
+<section class="project-info" style="background-color: #f7f7f7; border-radius: 12px; padding: 30px; margin: 40px 0;">
+  <h2 style="color: var(--color-accent);">Project Overview</h2>
+  <p>Our project explores the intersection of mythology and digital interactivity, bringing ancient artifacts to life through a virtual exhibition.</p>
+</section>
+
+<section class="process" style="background-color: #f7f7f7; border-radius: 12px; padding: 30px; margin: 40px 0;">
+  <h2 style="color: var(--color-accent);">Our Process</h2>
+  <p>We collaborated to research, design, and develop interactive elements using only HTML and CSS, focusing on accessibility and aesthetic consistency.</p>
+</section>
+
+<section class="reflection" style="background-color: #f7f7f7; border-radius: 12px; padding: 30px; margin: 40px 0;">
+  <h2 style="color: var(--color-accent);">Reflection</h2>
+  <p>This experience taught us how storytelling and visual design can merge to create engaging digital experiences inspired by cultural heritage.</p>
+</section>
+
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">© Project HADES</div>
   </footer>
-  
-  </body>
+
+
+  <!-- Theme Switcher -->
+  <script>
+    (function () {
+      const KEY = 'projecthades-theme';
+      const linkEl = document.getElementById('theme-css');
+      const select = document.getElementById('theme');
+      const THEME_FILES = {
+       "1500-1800":           "css/themes/theme-1500-1800.css",
+      "19th-century":        "css/themes/theme-1800.css",
+      "first-half-20th":     "css/themes/theme-1900-1950.css",
+      "second-half-20th":    "css/themes/theme-1950-1990.css",
+      "1990-2025":           "css/themes/theme-1990-2025.css",
+      "2035":                "css/themes/theme-2035.css"
+      };
+
+      function applyTheme(val){
+        const href = THEME_FILES[val] || THEME_FILES["1990-2025"];
+        linkEl.setAttribute('href', href);
+        localStorage.setItem(KEY, val);
+      }
+
+      const saved = localStorage.getItem(KEY) || '1990-2025';
+      select.value = saved;
+      applyTheme(saved);
+      select.addEventListener('change', e => applyTheme(e.target.value));
+    })();
+  </script>
+</body>
 </html>
