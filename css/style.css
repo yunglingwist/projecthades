@@ -3,7 +3,7 @@
   /* layout */
   --max: 1100px;
   --radius: 10px;
-  --marker-size: clamp(12px, 1.8vw, 22px);
+  --marker-size: clamp(32px, 4vw, 60px);
 
   /* design tokens (themes override) */
   --color-bg: #0b0b0b;                /* fallback only; themes must override */
@@ -181,7 +181,7 @@ body{
   padding: 0;
 }
 
-/* İÇTEKİ GÖRSEL – ayrı selektör olmalı (SCSS nesting değil) */
+/* image in marker */
 .marker img{
   position: absolute;
   inset: 0;
