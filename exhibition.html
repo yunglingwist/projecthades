@@ -17,7 +17,6 @@
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="exhibition.html" class="active">Exhibition</a>
-        <a href="map.html">Map</a>
         <a href="documentation.html">Documentation</a>
         <a href="disclaimer.html">Disclaimer</a>
       </nav>
@@ -26,8 +25,8 @@
         <select id="theme">
           <option value="1500-1800">1500–1800</option>
           <option value="1800s">1800s</option>
-          <option value="1900-1950">1900-1950</option>
-          <option value="1950-1990">1950-1990</option>
+          <option value="1900-1950">1900–1950</option>
+          <option value="1950-1990">1950–1990</option>
           <option value="1990-2010">1990–2010</option>
           <option value="2035">2035</option>
         </select>
@@ -41,6 +40,7 @@
     <section class="map-stage">
       <div class="map-wrap">
         <div id="map" role="img" aria-label="Hades exhibition map"></div>
+        <!-- ✨ SEVİYE ETİKETLERİ -->
         <div id="markers" aria-label="Exhibition hotspots"></div>
       </div>
     </section>
@@ -48,19 +48,8 @@
 
   <div class="tooltip" id="tooltip" hidden></div>
 
-
-  <!-- TextBox -->
-<div id="map-textboxes">
-  <div class="map-textbox">Surface</div>
-  <div class="map-textbox">Elysium</div>
-  <div class="map-textbox">Asphodel</div>
-  <div class="map-textbox">Tartarus</div>
-  <div class="map-textbox">House of Hades</div>
-</div>
-
-  <!-- Marker Data -->
+  <!-- Inline data (offline) -->
   <script>
-    // Positions are percentage of the map box (0–100)
     const MARKERS = [
       { x: 51, y: 85, label: 'Hades',  clickId: 'Hades', icon:'images/IconHades.webp'},
       { x: 35, y: 80, label: 'Ambrosia', clickId: 'Ambrosia', icon:'images/ItemAmbrosia.webp'},
@@ -68,7 +57,7 @@
       { x: 51, y: 72, label: 'Tomb Trove', clickId: 'Tomb Trove', icon:'images/ItemTrove.webp'},
       { x: 68, y: 66, label: 'Ares',  clickId: 'Ares', icon:'images/IconAres.webp'},
       { x: 58, y: 56, label: 'Charon', clickId: 'Charon', icon:'images/IconCharon.webp'},
-      { x: 50, y: 53, label: 'Vase',  clickId: 'Vase', icon:'images/ItemVase.webp' },
+      { x: 50, y: 53, label: 'Vase',  clickId: 'Vase', icon:'images/ItemVase.png' },
       { x: 70, y: 49, label: 'Obol Coin', clickId: 'Obol Coin', icon:'images/ItemObol.webp'},
       { x: 56, y: 47, label: 'Zeus',  clickId: 'Zeus', icon:'images/IconZeus.webp'},
       { x: 70, y: 38, label: 'Greek Shield', clickId: 'Greek Shield', icon:'images/ItemShield.webp' },
@@ -87,42 +76,33 @@
       const tip  = document.getElementById('tooltip');
       host.innerHTML = '';
 
-MARKERS.forEach(p => {
-  const m = document.createElement('button');
-  m.type = 'button';
-  m.className = 'marker';
-  m.style.left = p.x + '%';
-  m.style.top  = p.y + '%';
-  m.setAttribute('aria-label', p.label);
+      MARKERS.forEach(p => {
+        const m = document.createElement('button');
+        m.type = 'button';
+        m.className = 'marker';
+        m.style.left = p.x + '%';
+        m.style.top  = p.y + '%';
+        m.setAttribute('aria-label', p.label);
 
-  // marker dot
-  const dot = document.createElement('div');
-  dot.className = 'marker-dot';
-  m.appendChild(dot);
+        const img = document.createElement('img');
+        img.src = p.icon;
+        m.appendChild(img);
 
-  // icon image 
-  const icon = document.createElement('img');
-  icon.src = p.icon;
-  icon.alt = p.label;
-  m.appendChild(icon);
+        m.addEventListener('mouseenter', () => {
+          tip.hidden = false;
+          tip.textContent = p.label;
+        });
+        m.addEventListener('mousemove', (e) => {
+          tip.style.left = (e.clientX + 10) + 'px';
+          tip.style.top  = (e.clientY + 10) + 'px';
+        });
+        m.addEventListener('mouseleave', () => { tip.hidden = true; });
+        m.addEventListener('click', () => {
+          alert('Clicked: ' + p.clickId);
+        });
 
-  m.addEventListener('mouseenter', () => {
-    tip.hidden = false;
-    tip.textContent = p.label;
-  });
-  m.addEventListener('mousemove', (e) => {
-    tip.style.left = (e.clientX + 10) + 'px';
-    tip.style.top  = (e.clientY + 10) + 'px';
-  });
-  m.addEventListener('mouseleave', () => { tip.hidden = true; });
-  m.addEventListener('click', () => {
-    alert('Clicked: ' + p.clickId);
-  });
-
-  host.appendChild(m);
-});
-
-
+        host.appendChild(m);
+      });
     })();
   </script>
 
@@ -132,32 +112,24 @@ MARKERS.forEach(p => {
       const KEY = 'projecthades-theme';
       const linkEl = document.getElementById('theme-css');
       const select = document.getElementById('theme');
-
       const THEME_FILES = {
-        "1500-1800":        "css/themes/theme-1500-1800.css",
-        "1800s":     "css/themes/theme-1800.css",
-        "1900-1950":  "css/themes/theme-1900-1950.css",
+        "1500-1800": "css/themes/theme-1500-1800.css",
+        "1800s": "css/themes/theme-1800.css",
+        "1900-1950": "css/themes/theme-1900-1950.css",
         "1950-1990": "css/themes/theme-1950-1990.css",
-        "1990-2010":        "css/themes/theme-1990-2010.css",
-        "2035":             "css/themes/theme-2035.css"
+        "1990-2010": "css/themes/theme-1990-2010.css",
+        "2035": "css/themes/theme-2035.css"
       };
-
       function applyTheme(val){
         const href = THEME_FILES[val] || THEME_FILES["1990-2010"];
         linkEl.setAttribute('href', href);
         localStorage.setItem(KEY, val);
       }
-
       const saved = localStorage.getItem(KEY) || '1990-2010';
       select.value = saved;
       applyTheme(saved);
       select.addEventListener('change', e => applyTheme(e.target.value));
     })();
   </script>
-
-    <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">© Project HADES</div>
-  </footer>
 </body>
 </html>

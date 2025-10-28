@@ -169,8 +169,8 @@ body{
   left: 10px;
   top: 0;
   width: 160px;
-  z-index: 4;
-  pointer-events: none;
+  z-index: 6;              /* ÜSTTE: text kutuları her şeyin üzerinde */
+  pointer-events: none;    /* tıklamalar altta kalan markerlara geçsin */
 }
 
 .map-textbox {
@@ -186,17 +186,6 @@ body{
   font-weight: bold;
   text-align: center;
 }
-/* Text box positions */
-
-.map-textbox:nth-child(1) { top: 13%; } /* Surface - parallel to Cerberus */
-.map-textbox:nth-child(2) { top: 22%; } /* Elysium - parallel to Bow & Arrow */
-.map-textbox:nth-child(3) { top: 47%; } /* Asphodel - parallel to Zeus */
-.map-textbox:nth-child(4) { top: 66%; } /* Tartarus - parallel to Ares */
-.map-textbox:nth-child(5) { top: 85%; } /* House of Hades - parallel to Hades */
-
-/* Overlay (marker layer) */
-#markers{ position: absolute; inset: 0; }
-
 /* Marker (baklava) */
 .marker{
   position: absolute;
