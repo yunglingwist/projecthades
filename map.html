@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-map.css">
+    <link rel="stylesheet" href="css/style-popup.css">
+    <link id="theme-css" rel="stylesheet" href="css/themes/theme-1990-2010.css" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+        <a class="brand" href="index.html"><img src="images/HadesLogoRed.png" alt="Hades Logo" /></a>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="exhibition.html">Exhibition</a>
+            <a href="map.html" class="active">Map</a>
+            <a href="documentation.html">Documentation</a>
+            <a href="disclaimer.html">Disclaimer</a>
+        </nav>
+
+        <div class="theme-select">
+            <label for="theme" class="visually-hidden">Theme</label>
+            <select id="theme">
+            <option value="1500-1800">1500–1800</option>
+            <option value="1800s">1800s</option>
+            <option value="1900-1950">1900–1950</option>
+            <option value="1950-1990">1950–1990</option>
+            <option value="1990-2010">1990–2010</option>
+            <option value="2035">2035</option>
+            </select>
+        </div>
+        </div>
+    </header>
+
+    <div class="page-container">
+        
+        <div class="grid-layout">
+            
+            <div class="row-title">Surface</div>
+            <div class="grid-item">
+                <div class="item-circle">
+                    <img src="images\IconBow.webp" alt="Bow Icon" class="item-icon">
+                </div>
+                <button id="btn-bow" class="item-button">Bow & Arrow</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-circle">
+                    <img src="images\IconAthena.webp" alt="Athena Icon" class="item-icon">
+                </div>
+                <button id="btn-athena" class="item-button">Athena</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-circle">
+                    <img src="images\IconCerberus.webp" alt="Cerberus Icon" class="item-icon">
+                </div>
+                <button id="btn-cerberus" class="item-button">Cerberus</button>
+            </div>
+
+            <div class="row-title">Elysium</div>
+            <div class="grid-item">
+                <div class="item-circle">
+                    <img src="images\IconMinotaur.webp" alt="Minotaur Icon" class="item-icon">
+                </div>
+                <button id="btn-minotaur" class="item-button">Minotaur</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-circle">
+                    <img src="images\IconChariot.webp" alt="Chariot Icon" class="item-icon">
+                </div>
+                <button id="btn-chariot" class="item-button">Chariot</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-circle">
+                    <img src="images\IconShield.webp" alt="Shield Icon" class="item-icon">
+                </div>
+                <button id="btn-shield" class="item-button">Greek Shield</button>
+            </div>
+            
+            <div class="row-title">Asphodel</div>
+            <div class="grid-item">
+                <div class="item-circle">
+                    <img src="images\IconObol.webp" alt="Obol Icon" class="item-icon">
+                </div>
+                <button id="btn-obol" class="item-button">Obol Coin</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-circle">
+                    <img src="images\IconZeus.webp" alt="Zeus Icon" class="item-icon">
+                </div>
+                <button id="btn-zeus" class="item-button">Zeus</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-circle">
+                    <img src="images\IconVase.jpg" alt="Vase Icon" class="item-icon">
+                </div>
+                <button id="btn-vase" class="item-button">Vase</button>
+            </div>
+
+            <div class="row-title">Tartarus</div>
+            <div class="grid-item">
+                <div class="item-circle">
+                    <img src="images\IconTrove.webp" alt="Trove Icon" class="item-icon">
+                </div>
+                <button id="btn-trove" class="item-button">Tomb Trove</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-circle">
+                    <img src="images\IconAres.webp" alt="Trove Icon" class="item-icon">
+                </div>
+                <button id="btn-ares" class="item-button">Ares</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-circle">
+                    <img src="images\IconCharon.webp" alt="Charon Icon" class="item-icon">
+                </div>
+                <button id="btn-charon" class="item-button">Charon</button>
+            </div>
+
+            <div class="row-title">House of Hades</div>
+            <div class="grid-item">
+                <div class="item-circle">
+                    <img src="images\IconHades.webp" alt="Hades Icon" class="item-icon">
+                </div>
+                <button id="btn-hades" class="item-button">Hades & Persephone</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-circle">
+                    <img src="images\IconBlade.webp" alt="Blade Icon" class="item-icon">
+                </div>
+                <button id="btn-blade" class="item-button">Stygian Blade</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-circle">
+                    <img src="images\IconAmbrosia.webp" alt="Ambrosia Icon" class="item-icon">
+                </div>
+                <button id="btn-ambrosia" class="item-button">Ambrosia</button>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <div class="background-overlay">
+        <div class="form-container">
+            <div class="form-header">
+                <h1 class="item-name-title"></h1>
+                <span class="close-button">&times;</span>
+            </div>
+            
+            <div class="content-section">
+                <div id="real-img" class="image-placeholder large"></div>
+                <div id="game-img" class="image-placeholder large"></div>
+            </div>
+
+            <div class="content-section info-row">
+                <div class="info-box small">
+                    <label>ID</label>
+                    <p id="id" class="text"></p>
+                </div>
+                <div class="info-box small">
+                    <label>Title</label>
+                    <p id="title" class="text"></p>
+                </div>
+                <div class="info-box small">
+                    <label>Type</label>
+                    <p id="type" class="text"></p>
+                </div>
+                <div class="info-box small">
+                    <label>Material</label>
+                    <p id="material" class="text"></p>
+                </div>
+                <div class="info-box small">
+                    <label>Date</label>
+                    <p id="date" class="text"></p>
+                </div>
+                <div class="info-box small">
+                    <label>Culture</label>
+                    <p id="culture" class="text"></p>
+                </div>
+                <div class="info-box small">
+                    <label>Museum</label>
+                    <p id="museum" class="text"></p>
+                </div>
+                <div class="info-box small">
+                    <label>Accession Number</label>
+                    <p id="accession-number" class="text"></p>
+                </div>
+                <div class="info-box small">
+                    <label>Provenance</label>
+                    <p id="provenance" class="text"></p>
+                </div>
+                <div class="info-box small">
+                    <label>Dimensions</label>
+                    <p id="dimensions" class="text">
+                    </p>
+                </div>
+                <div class="info-box small">
+                    <label>Tags</label>
+                    <p id="tags" class="text"></p>
+                </div>
+                <div class="info-box small">
+                    <label>Source</label>
+                    <p id="source" class="text"></p>
+                </div>
+                <div class="info-box small">
+                    <label>Relations</label>
+                    <p id="relations" class="text"></p>
+                </div>
+                <div class="info-box small">
+                    <label>Game Relation</label>
+                    <p id="game-relation" class="text"></p>
+                </div>
+            </div>
+
+
+<div class="content-controls" id="difficulty-controls-container">
+    <div class="content-options">
+        
+        <div class="control-group">
+            <span class="control-label">CONTENT</span> 
+            <span class="level-indicator" id="content-level-indicator">Simple</span>
+            <div class="control-buttons">
+                <button type="button" class="action-button minus-button">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="action-button plus-button">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <span class="control-label">Language</span> 
+            <span class="level-indicator" id="language-level-indicator">Simple</span>
+            <div class="control-buttons">
+                <button type="button" class="action-button minus-button">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="action-button plus-button">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+            <div class="content-section description-row">
+                <div class="description-box full">
+                    <label>Description</label>
+                    <p id="description" class="text"></p>
+                    
+                    <div class="extra-info">
+                        <p id="extra-description-text" class="text hidden"></p>  
+                    </div>
+
+                    <button id="btn-show-more" class="control-btn" type="button">Show More</button>
+                </div>
+            </div>
+            
+            <div class="form-footer">
+                <button class="button back-button">Back</button>
+                <button class="button next-button">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+    <div class="container">Copyright</div>
+    </footer>
+
+
+<script src="js/theme-switcher.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
