@@ -1,0 +1,174 @@
+:root {
+    --border-radius: 8px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* DEĞİŞİKLİK: Tema rengini kullan */
+    background-color: var(--bg);
+    /* DEĞİŞİKLİK: Tema metin rengini kullan */
+    color: var(--bg); 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-container {
+    padding-top: 50px; 
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+/* ======================================================================== */
+/* IZGARA DÜZENİ - ÇÖZÜM UYGULANMIŞTIR */
+/* ======================================================================== */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 300px repeat(3, 1fr); 
+    gap: 15px; 
+    max-width: 1200px;
+    width: 90%; 
+    margin: 50px auto; 
+    align-items: center; 
+}
+
+/* Sol Taraftaki Başlık Kutuları */
+.row-title {
+    /* DEĞİŞİKLİK: Tema vurgu rengini kullan */
+    background-color: var(--gold);
+    /* DEĞİŞİKLİK: Tema metin rengini kullan */
+    color: var(--bg); 
+    
+    height: 111px;
+    
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    border-radius: var(--border-radius);
+    
+    grid-column: 1 / 2; 
+}
+
+/* Her Bir Öğe Kutusu (Daire + Buton) */
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    padding: 10px;
+}
+
+/* Üstteki Gri Daire */
+.item-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+/* Doğrudan HTML'e eklenen WebP ikonu için stil */
+.item-icon {
+    display: block;
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; 
+}
+
+/* Butonlar */
+.item-button {
+    /* DEĞİŞİKLİK: Tema vurgu rengini kullan */
+    background-color: var(--gold);
+    /* DEĞİŞİKLİK: Tema metin rengini kullan */
+    color: var(--bg);
+    border: none;
+    padding: 8px 15px;
+    text-transform: uppercase;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    width: 90%; 
+    transition: background-color 0.2s, transform 0.1s;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.item-button:hover {
+    /* DEĞİŞİKLİK: Hover rengi için tema accent-dark veya highlight kullanılabilir. */
+    /* Ancak şimdilik sabit değeri tema değişkenleriyle değiştiriyorum. */
+    background-color: var(--gold-dark, #f1b369); /* Fallback ile tema değişkenini kullan */
+}
+
+/* ======================================================================== */
+/* ALT BANT (COPYRIGHT) */
+/* ======================================================================== */
+.copyright-bar {
+    /* DEĞİŞİKLİK: Tema vurgu rengini kullan */
+    background-color: var(--gold);
+    /* DEĞİŞİKLİK: Tema metin rengini kullan */
+    color: var(--bg);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: auto; 
+    font-weight: 700;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ======================================================================== */
+/* RESPONSIVE DÜZENLEME (Küçük Ekranlar İçin) */
+/* ======================================================================== */
+
+@media (max-width: 900px) {
+    .grid-layout {
+        grid-template-columns: 100px repeat(2, 1fr); 
+        width: 95%;
+        gap: 10px;
+    }
+    .row-title {
+        height: auto; 
+        grid-row: span 2; 
+    }
+}
+
+@media (max-width: 600px) {
+    /* Mobil: Tek sütun yapısı ve diğer mobil düzeltmeleri aynı kalır */
+    .grid-layout {
+        grid-template-columns: 1fr; 
+        gap: 5px;
+        margin: 20px auto;
+    }
+
+    .row-title {
+        grid-column: 1 / -1; 
+        margin-top: 15px;
+        height: auto; 
+    }
+    
+    .grid-item {
+        grid-column: 1 / -1;
+        flex-direction: row; 
+    }
+
+    .item-circle {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+    
+    .item-button {
+        width: auto;
+        flex-grow: 1; 
+        text-align: left;
+    }
+}
