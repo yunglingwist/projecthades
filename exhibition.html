@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Base + Theme -->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style-map.css">
   <link id="theme-css" rel="stylesheet" href="css/themes/theme-1990-2010.css" />
 </head>
 <body>
@@ -17,6 +18,7 @@
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="exhibition.html" class="active">Exhibition</a>
+        <a href="map.html">Map</a>
         <a href="documentation.html">Documentation</a>
         <a href="disclaimer.html">Disclaimer</a>
       </nav>
@@ -45,91 +47,133 @@
       </div>
     </section>
   </main>
+    <div class="background-overlay">
+          <div class="form-container">
+              <div class="form-header">
+                  <h1 class="item-name-title"></h1>
+                  <span class="close-button">&times;</span>
+              </div>
+              
+              <div class="content-section">
+                  <div id="real-img" class="image-placeholder large"></div>
+                  <div id="game-img" class="image-placeholder large"></div>
+              </div>
 
+              <div class="content-section info-row">
+                  <div class="info-box small">
+                      <label>ID</label>
+                      <p id="id" class="text"></p>
+                  </div>
+                  <div class="info-box small">
+                      <label>Title</label>
+                      <p id="title" class="text"></p>
+                  </div>
+                  <div class="info-box small">
+                      <label>Type</label>
+                      <p id="type" class="text"></p>
+                  </div>
+                  <div class="info-box small">
+                      <label>Material</label>
+                      <p id="material" class="text"></p>
+                  </div>
+                  <div class="info-box small">
+                      <label>Date</label>
+                      <p id="date" class="text"></p>
+                  </div>
+                  <div class="info-box small">
+                      <label>Culture</label>
+                      <p id="culture" class="text"></p>
+                  </div>
+                  <div class="info-box small">
+                      <label>Museum</label>
+                      <p id="museum" class="text"></p>
+                  </div>
+                  <div class="info-box small">
+                      <label>Accession Number</label>
+                      <p id="accession-number" class="text"></p>
+                  </div>
+                  <div class="info-box small">
+                      <label>Provenance</label>
+                      <p id="provenance" class="text"></p>
+                  </div>
+                  <div class="info-box small">
+                      <label>Dimensions</label>
+                      <p id="dimensions" class="text">
+                      </p>
+                  </div>
+                  <div class="info-box small">
+                      <label>Tags</label>
+                      <p id="tags" class="text"></p>
+                  </div>
+                  <div class="info-box small">
+                      <label>Source</label>
+                      <p id="source" class="text"></p>
+                  </div>
+                  <div class="info-box small">
+                      <label>Relations</label>
+                      <p id="relations" class="text"></p>
+                  </div>
+                  <div class="info-box small">
+                      <label>Game Relation</label>
+                      <p id="game-relation" class="text"></p>
+                  </div>
+              </div>
+
+
+  <div class="content-controls" id="difficulty-controls-container">
+      <div class="content-options">
+          
+          <div class="control-group">
+              <span class="control-label">CONTENT</span> 
+              <span class="level-indicator" id="content-level-indicator">Simple</span>
+              <div class="control-buttons">
+                  <button type="button" class="action-button minus-button">
+                      <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="action-button plus-button">
+                      <i class="fas fa-plus"></i>
+                  </button>
+              </div>
+          </div>
+          
+          <div class="control-group">
+              <span class="control-label">Language</span> 
+              <span class="level-indicator" id="language-level-indicator">Simple</span>
+              <div class="control-buttons">
+                  <button type="button" class="action-button minus-button">
+                      <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="action-button plus-button">
+                      <i class="fas fa-plus"></i>
+                  </button>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+
+    <div class="content-section description-row">
+        <div class="description-box full">
+            <label>Description</label>
+            <p id="description" class="text"></p>
+            
+            <div class="extra-info">
+                <p id="extra-description-text" class="text hidden"></p> 
+                <button id="btn-show-more" class="control-btn" type="button">Show More</button> 
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-footer">
+        <button class="button back-button">Back</button>
+        <button class="button next-button">Next</button>
+    </div>
+  </div>
+    </div>
   <div class="tooltip" id="tooltip" hidden></div>
 
-  <!-- Inline data (offline) -->
-  <script>
-    const MARKERS = [
-      { x: 51, y: 85, label: 'Hades',  clickId: 'Hades', icon:'images/IconHades.webp'},
-      { x: 35, y: 80, label: 'Ambrosia', clickId: 'Ambrosia', icon:'images/ItemAmbrosia.webp'},
-      { x: 67, y: 83, label: 'Stygian Blade',  clickId: 'Stygian Blade', icon:'images/ItemBlade.webp'},
-      { x: 51, y: 72, label: 'Tomb Trove', clickId: 'Tomb Trove', icon:'images/ItemTrove.webp'},
-      { x: 68, y: 66, label: 'Ares',  clickId: 'Ares', icon:'images/IconAres.webp'},
-      { x: 58, y: 56, label: 'Charon', clickId: 'Charon', icon:'images/IconCharon.webp'},
-      { x: 50, y: 53, label: 'Vase',  clickId: 'Vase', icon:'images/ItemVase.png' },
-      { x: 70, y: 49, label: 'Obol Coin', clickId: 'Obol Coin', icon:'images/ItemObol.webp'},
-      { x: 56, y: 47, label: 'Zeus',  clickId: 'Zeus', icon:'images/IconZeus.webp'},
-      { x: 70, y: 38, label: 'Greek Shield', clickId: 'Greek Shield', icon:'images/ItemShield.webp' },
-      { x: 36, y: 36, label: 'Chariot',  clickId: 'Chariot' , icon:'images/ItemChariot.webp'},
-      { x: 52, y: 26, label: 'Minotaur', clickId: 'Minotaur', icon:'images/PortraitMinotaur.webp' },
-      { x: 71, y: 22, label: 'Bow & Arrow',  clickId: 'Bow & Arrow', icon:'images/ItemBow.webp' },
-      { x: 17, y: 36, label: 'Athena', clickId: 'Athena', icon:'images/IconAthena.webp' },
-      { x: 51, y: 13, label: 'Cerberus',  clickId: 'Cerberus', icon:'images/IconCerberus.webp' }
-    ];
-  </script>
-
-  <!-- Draw markers -->
-  <script>
-    (function(){
-      const host = document.getElementById('markers');
-      const tip  = document.getElementById('tooltip');
-      host.innerHTML = '';
-
-      MARKERS.forEach(p => {
-        const m = document.createElement('button');
-        m.type = 'button';
-        m.className = 'marker';
-        m.style.left = p.x + '%';
-        m.style.top  = p.y + '%';
-        m.setAttribute('aria-label', p.label);
-
-        const img = document.createElement('img');
-        img.src = p.icon;
-        m.appendChild(img);
-
-        m.addEventListener('mouseenter', () => {
-          tip.hidden = false;
-          tip.textContent = p.label;
-        });
-        m.addEventListener('mousemove', (e) => {
-          tip.style.left = (e.clientX + 10) + 'px';
-          tip.style.top  = (e.clientY + 10) + 'px';
-        });
-        m.addEventListener('mouseleave', () => { tip.hidden = true; });
-        m.addEventListener('click', () => {
-          alert('Clicked: ' + p.clickId);
-        });
-
-        host.appendChild(m);
-      });
-    })();
-  </script>
-
-  <!-- Theme Switcher -->
-  <script>
-    (function () {
-      const KEY = 'projecthades-theme';
-      const linkEl = document.getElementById('theme-css');
-      const select = document.getElementById('theme');
-      const THEME_FILES = {
-        "1500-1800": "css/themes/theme-1500-1800.css",
-        "1800s": "css/themes/theme-1800.css",
-        "1900-1950": "css/themes/theme-1900-1950.css",
-        "1950-1990": "css/themes/theme-1950-1990.css",
-        "1990-2010": "css/themes/theme-1990-2010.css",
-        "2035": "css/themes/theme-2035.css"
-      };
-      function applyTheme(val){
-        const href = THEME_FILES[val] || THEME_FILES["1990-2010"];
-        linkEl.setAttribute('href', href);
-        localStorage.setItem(KEY, val);
-      }
-      const saved = localStorage.getItem(KEY) || '1990-2010';
-      select.value = saved;
-      applyTheme(saved);
-      select.addEventListener('change', e => applyTheme(e.target.value));
-    })();
-  </script>
+<script src="js/exhibition.js"></script>
+<script src="js/theme-switcher.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
