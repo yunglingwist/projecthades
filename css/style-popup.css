@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--bg);
-    color: var(--bg);
+    background-color: var(--color-bg);
+    color: var(--color-bg);
     font-size: 14px;
     min-height: 100vh;
     width: 100vw; 
@@ -44,11 +44,11 @@ body {
 /* 3. FORM KONTEYNER VE İÇERİK STİLLERİ */
 /* ======================================================================== */
 .form-container {
-    background-color: var(--gold);
+    background-color: var(--color-accent);
     width: 90%; 
     max-width: 800px; 
     padding: 15px;
-    border: 3px solid var(--muted);
+    border: 3px solid var(--text-muted);
     border-radius: 8px; /* İstenen radius */
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); 
     z-index: 1001;
@@ -74,7 +74,7 @@ body {
     align-items: center;
     padding-bottom: 10px;
     margin-bottom: 20px;
-    border-bottom: 1px solid var(--bg);
+    border-bottom: 1px solid var(--color-bg);
 }
 
 .item-name-title {
@@ -88,7 +88,7 @@ body {
     font-size: 30px;
     cursor: pointer;
     line-height: 1;
-    color: var(--bg);
+    color: var(--color-bg);
 }
 
 .image-placeholder.large {
@@ -153,7 +153,7 @@ body {
 /* Görsel Yer Tutucular */
 .image-placeholder {
     background-color: rgba(0, 0, 0, 0.1); 
-    border: 1px solid var(--muted);
+    border: 1px solid var(--text-muted);
     flex-grow: 1;
     min-height: 180px;
     border-radius: 8px; /* İstenen radius */
@@ -179,8 +179,8 @@ body {
 
 .info-box.small {
     /* Her bir bilgi kutusunun (ID, Title, vb.) stili */
-    background-color: var(--bg); 
-    color: var(--fg);
+    background-color: var(--color-bg); 
+    color: var(--color-text);
     padding: 6px 10px;
     border-radius: 8px;
 
@@ -200,7 +200,7 @@ body {
 }
 
 .info-box.small label {
-    color: var(--gold);
+    color: var(--color-accent);
     font-size: 9px;
     font-weight: 700;
     text-transform: uppercase;
@@ -210,7 +210,7 @@ body {
 
 .info-box.small p.text {
 /* Veri değerleri (Placeholder) - Flex yapısında en altta hizalanır */
-    color: var(--fg); 
+    color: var(--color-text); 
     font-size: 13px;
     font-weight: 500;
     line-height: 1.2;
@@ -229,8 +229,8 @@ body {
 /* Açıklama Kutusu */
 .description-box {
     flex-basis: 100%;
-    background-color: var(--bg);
-    color: var(--fg);
+    background-color: var(--color-bg);
+    color: var(--color-text);
     padding: 15px;
     border-radius: 8px; /* İstenen radius */
 }
@@ -245,7 +245,7 @@ body {
     height: 100px;
     border: none;
     background: transparent;
-    color: var(--fg);
+    color: var(--color-text);
     padding: 0;
     resize: none;
     font-family: inherit;
@@ -253,7 +253,7 @@ body {
 }
 
 .description-box label {
-    color: var(--gold);
+    color: var(--color-accent);
 }
 
 #description.text {
@@ -281,7 +281,7 @@ body {
     display: flex;
     justify-content: flex-end; /* Sağ tarafa hizalı */
     margin-bottom: 30px;
-    color: var(--bg);
+    color: var(--color-bg);
     font-weight: 700;
 }
 
@@ -309,15 +309,15 @@ body {
 
 .control-buttons {
     display: flex;
-    border: 1px solid var(--bg); /* Tüm buton grubuna dış çerçeve */
+    border: 1px solid var(--color-bg); /* Tüm buton grubuna dış çerçeve */
     border-radius: var(--border-radius);
     overflow: hidden; /* Kenarlıkların iç içe geçmesini engeller */
 }
 
 /* Artı ve Eksi Butonlarının Ortak Stili */
 .action-button {
-    background-color: var(--bg);
-    color: var(--fg);
+    background-color: var(--color-bg);
+    color: var(--color-text);
     border: none;
     cursor: pointer;
     padding: 3px 6px; /* Butonların küçük boyutu */
@@ -338,7 +338,7 @@ body {
 
 /* Butonlar arasına dikey ayırıcı */
 .minus-button {
-    border-right: 1px solid var(--fg); /* Ayırıcı çizgi */
+    border-right: 1px solid var(--color-text); /* Ayırıcı çizgi */
 }
 
 .action-button i {
@@ -363,8 +363,8 @@ body {
     min-width: 80px;
     border-radius: 8px; /* İstenen radius */
     flex-shrink: 0; 
-    background-color: var(--bg);
-    color: var(--gold);
+    background-color: var(--color-bg);
+    color: var(--color-accent);
 }
 
 .button:hover {
@@ -378,8 +378,8 @@ body {
 }
 
 .control-btn.active {
-    background-color: var(--bg); /* Veya hangi aktif rengi kullanıyorsanız */
-    color: var(--fg);
+    background-color: var(--color-bg); /* Veya hangi aktif rengi kullanıyorsanız */
+    color: var(--color-text);
 }
 
 #btn-show-more,
@@ -391,7 +391,7 @@ body {
     margin: 0;
     
     /* Metin stilleri */
-    color: var(--fg); /* Metin rengini belirle (Önceki örneklerinizdeki gibi altın/sarı tonu) */
+    color: var(--color-text); /* Metin rengini belirle (Önceki örneklerinizdeki gibi altın/sarı tonu) */
     font-size: 1em; 
     font-weight: bold; /* Metni kalın yap (isteğe bağlı) */
     text-align: right; /* Metni sağa yasla (HTML'deki konumuna göre) */
@@ -416,7 +416,7 @@ body {
 .level-indicator {
     font-size: 0.9em;
     font-weight: bold;
-    color: var(--bg); /* Veya kullandığınız ana renk */
+    color: var(--color-bg); /* Veya kullandığınız ana renk */
     margin-left: 10px;
     margin-right: 10px;
     /* Gerekirse hizalamak için display: flex içindeki align-items ayarlarınızı kontrol edin */

@@ -6,9 +6,9 @@ body {
     margin: 0;
     padding: 0;
     /* DEĞİŞİKLİK: Tema rengini kullan */
-    background-color: var(--bg);
+    background-color: var(--color-bg);
     /* DEĞİŞİKLİK: Tema metin rengini kullan */
-    color: var(--bg); 
+    color: var(--color-bg); 
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -36,9 +36,9 @@ body {
 /* Sol Taraftaki Başlık Kutuları */
 .row-title {
     /* DEĞİŞİKLİK: Tema vurgu rengini kullan */
-    background-color: var(--gold);
+    background-color: var(--color-accent);
     /* DEĞİŞİKLİK: Tema metin rengini kullan */
-    color: var(--bg); 
+    color: var(--color-bg); 
     
     height: 111px;
     
@@ -87,9 +87,9 @@ body {
 /* Butonlar */
 .item-button {
     /* DEĞİŞİKLİK: Tema vurgu rengini kullan */
-    background-color: var(--gold);
+    background-color: var(--color-accent);
     /* DEĞİŞİKLİK: Tema metin rengini kullan */
-    color: var(--bg);
+    color: var(--color-bg);
     border: none;
     padding: 8px 15px;
     text-transform: uppercase;
@@ -105,7 +105,7 @@ body {
 .item-button:hover {
     /* DEĞİŞİKLİK: Hover rengi için tema accent-dark veya highlight kullanılabilir. */
     /* Ancak şimdilik sabit değeri tema değişkenleriyle değiştiriyorum. */
-    background-color: var(--gold-dark, #f1b369); /* Fallback ile tema değişkenini kullan */
+    background-color: var(--color-highlight, #f1b369); /* Fallback ile tema değişkenini kullan */
 }
 
 /* ======================================================================== */
@@ -113,9 +113,9 @@ body {
 /* ======================================================================== */
 .copyright-bar {
     /* DEĞİŞİKLİK: Tema vurgu rengini kullan */
-    background-color: var(--gold);
+    background-color: var(--color-accent);
     /* DEĞİŞİKLİK: Tema metin rengini kullan */
-    color: var(--bg);
+    color: var(--color-bg);
     text-align: center;
     padding: 15px 0;
     margin-top: auto; 
