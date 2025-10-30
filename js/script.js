@@ -801,6 +801,24 @@ const DATA_STORE = {
 }
 };
 
+const CHRONOLOGICAL_ORDER = [
+    "chariot",
+    "bow",
+    "obol",
+    "ares",
+    "vase",
+    "trove",
+    "shield",
+    "blade",
+    "ambrosia",
+    "zeus",
+    "athena",
+    "cerberus",
+    "charon",
+    "hades",
+    "minotaur"
+];
+
 // ====================================================================
 // 1. GLOBAL DEĞİŞKENLER VE SABİTLER
 // ====================================================================
@@ -989,6 +1007,53 @@ function populatePopup(data) {
     }
 }
 
+function resetAndPopulate(itemId) {
+    currentItemId = itemId;
+    
+    // Pop-up içeriğini temiz seviyelerle doldur
+    currentContentIndex = 0; // Seviyeyi Simple'a sıfırla
+    currentLanguageIndex = 0; // Seviyeyi Simple'a sıfırla
+    
+    populatePopup(DATA_STORE[itemId]);
+    updateControlIndicators(); // Sıfırlamayı yansıt
+}
+
+// Sonraki/Önceki Öğeye Geçiş İşlevi
+function handleItemNavigation(direction) {
+    if (!currentItemId) return;
+
+    const currentIndex = CHRONOLOGICAL_ORDER.indexOf(currentItemId);
+    let newIndex;
+
+    if (direction === 'next') {
+        // Döngüsel geçiş (son öğeden sonra başa döner)
+        newIndex = (currentIndex + 1) % CHRONOLOGICAL_ORDER.length;
+    } else if (direction === 'prev') {
+        // Döngüsel geçiş (ilk öğeden önce sona döner)
+        // JavaScript'teki negatif modül sorununu çözmek için '+ CHRONOLOGICAL_ORDER.length' eklenir
+        newIndex = (currentIndex - 1 + CHRONOLOGICAL_ORDER.length) % CHRONOLOGICAL_ORDER.length;
+    } else {
+        return;
+    }
+
+    const nextItemId = CHRONOLOGICAL_ORDER[newIndex];
+    
+    if (DATA_STORE[nextItemId]) {
+        resetAndPopulate(nextItemId);
+        const formContainer = document.querySelector('.form-container'); 
+        
+        if (formContainer) {
+            formContainer.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Yumuşak geçiş için
+            });
+        }
+        
+    }
+
+    
+}
+
 // Açma İşlevi
 function openPopup(event) {
     const overlay = document.querySelector('.background-overlay');
@@ -1108,6 +1173,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentMinus = document.querySelector('.control-group:nth-child(1) .minus-button');
     const languagePlus = document.querySelector('.control-group:nth-child(2) .plus-button');
     const languageMinus = document.querySelector('.control-group:nth-child(2) .minus-button');
+
+
+    const prevButton = document.querySelector('.back-button'); // <--- .back-button ile eşleşir
+    const nextButton = document.querySelector('.next-button'); // <--- .next-button ile eşleşir
     
     // 2. Olay Dinleyicilerini Bağlama
     
@@ -1143,6 +1212,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (languageMinus) {
         languageMinus.addEventListener('click', () => handleLanguageChange('minus'));
+    }
+
+    if (prevButton) {
+        // back-button = 'prev' yönü
+        prevButton.addEventListener('click', () => handleItemNavigation('prev'));
+    }
+    if (nextButton) {
+        // next-button = 'next' yönü
+        nextButton.addEventListener('click', () => handleItemNavigation('next'));
     }
 
     // ESC ve Overlay tıklaması
