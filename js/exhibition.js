@@ -25,10 +25,51 @@ function drawMarkers(){
       MARKERS.forEach(p => {
         const m = document.createElement('button');
         m.type = 'button';
-        m.className = 'marker';
+        // Yeni sınıfı ekleyin: 'marker' stil için, 'popup-opener' işlevsellik için
+        m.className = 'marker marker-buttons'; // <-- BURAYI DEĞİŞTİRİN
         m.style.left = p.x + '%';
         m.style.top  = p.y + '%';
         m.setAttribute('aria-label', p.label);
+        
+        m.id = p.clickId.toLowerCase().replace(/ /g, '-'); 
+        
+        let itemId;
+
+        if (p.clickId === 'Stygian Blade') {
+            itemId = 'blade';
+        } else if (p.clickId === 'Bow & Arrow') {
+            itemId = 'bow';
+        } else if (p.clickId === 'Tomb Trove') {
+            itemId = 'trove';
+        } else if (p.clickId === 'Obol Coin') {
+            itemId = 'obol';
+        } else if (p.clickId === 'Greek Shield') {
+            itemId = 'shield';
+        } else if (p.clickId === 'Charon') {
+            itemId = 'charon';
+        } else if (p.clickId === 'Ares') {
+            itemId = 'ares';
+        } else if (p.clickId === 'Ambrosia') {
+            itemId = 'ambrosia';
+        } else if (p.clickId === 'Hades') {
+            itemId = 'hades';
+        } else if (p.clickId === 'Vase') {
+            itemId = 'vase';
+        } else if (p.clickId === 'Zeus') {
+            itemId = 'zeus';
+        } else if (p.clickId === 'Chariot') {
+            itemId = 'chariot';
+        } else if (p.clickId === 'Minotaur') {
+            itemId = 'minotaur';
+        } else if (p.clickId === 'Athena') {
+            itemId = 'athena';
+        } else if (p.clickId === 'Cerberus') {
+            itemId = 'cerberus';
+        } else {
+             itemId = p.clickId.toLowerCase().replace(/ /g, '-').replace(/&/g, ''); // Genel kural
+        }
+        
+        m.id = itemId; // ** Bu ID, script.js'teki DATA_STORE anahtarıyla eşleşmelidir **
 
         const img = document.createElement('img');
         img.src = p.icon;

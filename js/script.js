@@ -452,7 +452,7 @@ const DATA_STORE = {
                 "type": "real"
             },
             {
-                "src": "../images/PortraitHades.webp",
+                "src": "images/PortraitHades.webp",
                 "caption": "Persephone in Hades",
                 "type": "game"
             }
@@ -861,8 +861,13 @@ function loadMedia(container, mediaItem, defaultTitle) {
         container.innerHTML = ''; 
         
         if (mediaItem && mediaItem.src) {
+            let cssAdjustedPath = mediaItem.src;
+            if (cssAdjustedPath.startsWith('images/')) {
+                cssAdjustedPath = '../' + mediaItem.src; 
+            }
             container.style.display = 'flex'; 
-            container.style.setProperty('--blurbg-image', `url("${mediaItem.src}")`);
+            
+            container.style.setProperty('--blurbg-image', `url("${cssAdjustedPath}")`);
             
             const img = document.createElement('img');
             img.src = mediaItem.src;
@@ -1096,6 +1101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const openButtons = document.querySelectorAll('.item-button'); 
     const closeButton = document.querySelector('.close-button'); 
     const showMoreButton = document.getElementById('btn-show-more');
+    const markerButtons = document.querySelectorAll('.marker-buttons'); 
     
     // Control Butonları
     const contentPlus = document.querySelector('.control-group:nth-child(1) .plus-button');
@@ -1110,6 +1116,9 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', openPopup);
     });
 
+    markerButtons.forEach(button => {
+        button.addEventListener('click', openPopup);
+    });
     // Pop-up Kapatma
     if (closeButton) {
         closeButton.addEventListener('click', closePopup);
