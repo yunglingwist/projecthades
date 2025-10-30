@@ -1,19 +1,16 @@
-/* 1500–1800 (Garamond/serif, paper tones) */
 :root{
-  /* design tokens (functional names) */
-  --color-bg: #FAF7F0;
-  --color-text: #1B1B1B;
 
-  --color-accent: #7A4B2E;         /* primary accent (was --gold) */
-  --color-accent-border: #5D3922;  /* accent border (was --gold-dark) */
-  --color-highlight: #A66D49;      /* hover/glow accent */
-  --text-muted: #5D5A54;
+  --color-bg:#172639;
+  --color-text:#CB9323;
+  --color-accent:#D5C2A2;       /* ana vurgu */
+  --color-highlight:#926D33;  /* kenar/border */
+  --text-muted:#926D33;
+  --accent:#926D33;    
 
-  /* map image for this theme
-     NOTE: path is from css/themes/ to images/...  */
-  --background-map: url('../images/GameMap.jpg');
+  /* map image for this theme */
+  --background-map: url('../images/GameMap.jpg'); /* Koyu temaya uygun varsayılan bir harita */
 
   /* typography */
-  --font-text: "Garamond", "EB Garamond", Georgia, ui-serif, serif;
-  --font-display: "Garamond", "EB Garamond", Georgia, serif;
+  --font-text: "Libre Caslon Text", "Times New Roman", ui-serif, serif; /* İstenen font */
+  --font-display: "Libre Caslon Text", "Times New Roman", serif;
 }
